@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FM</title>
+</head>
+<body>
+    index
+</body>
+<script src="__JS__/lib/jquery-1.8.2.min.js"></script>
+<script>
+    $(function(){
+
+        var baseUrl='__API_URL__'+'/';
+
+        var para={
+            name:'hisihi',
+            pwd:'123456',
+            code:'W4r0'
+        };
+        $.post(baseUrl+'login',para,function(result){
+            alert(result);
+        });
+
+        $.get(baseUrl+'getBannerInfo',null,function(result){
+//            alert(result);
+        });
+    });
+</script>
+</html>
