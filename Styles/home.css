@@ -1,0 +1,501 @@
+﻿body 
+{
+    margin:0;
+    padding:0;
+    font: 12px/180% "微软雅黑" ,Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+ul
+{
+    margin:0;
+    padding:0;
+}
+ul li
+{
+    list-style:none;
+}
+img
+{
+    border:0;
+}
+.top
+{
+    height:170px;
+    width:900px;
+    margin:0 auto;
+}
+.top .logo
+{
+     height:54px;
+     width:131px;
+     /*background:url(../images/fm_logoV1.png) 0 0 no-repeat;*/
+     float:left;
+     margin-left:40px;
+     margin-top:60px;
+}
+/*用户登陆注册*/
+.top .userInfo
+{
+    width:250px;
+    height:40px;
+    float:right;
+    font-size:12px; 
+    background-color:#E5E6E6;
+}
+
+.top .userInfo div
+{
+    float:left;
+    background-color:#E5E6E6;
+   
+}
+.top .userInfo .box
+{
+    height:30px; 
+    text-align:center;
+    padding-top:10px;
+}
+.cutLine
+{
+    display:block;
+    width:1px;
+    height:15px;
+    padding-top:0px;
+    margin-top:13px;
+    margin-left:2px;
+    background:url(../images/cutline.png) 0 0 no-repeat;
+}
+#userLogin
+{
+     width:58px;
+     cursor:pointer;
+}
+#userRegister
+{
+    width:82px;
+    cursor:pointer;
+}
+#openPro
+{
+    width:82px;
+    background:url(../images/pro_icon.gif) 99% 50% no-repeat;
+    cursor:pointer;
+} 
+/*登陆时的遮罩层*/
+#gray
+{
+     width:100%;
+     opacity:0.4;
+     z-index:200;
+     background-color:#ECEFEE;
+     display:block;
+     position:absolute;
+     top:0;
+     left:0;
+}
+/*登录框*/
+#loginContainer
+{
+    width:550px;
+    height:350px;
+    z-index:500;
+    position:absolute;
+    display:block;
+}
+.normalLogin
+{
+    float:left;
+    width:360px;
+    height:350px;
+    background-color:#FFFFFF;
+}
+.loginDiv
+{
+    text-align:center;
+    margin-top:20px;
+    height:40px;
+}
+.normalLogin input
+{
+    height:35px;
+    width:285px;
+    padding-left:10px;
+    background-color:#EEF1F0;
+    border:0;
+}
+#checkCode
+{
+     margin-left:32px;
+     width:150px;
+     height:35px;
+     float:left;
+}
+#checkCodeImg
+{
+    margin-left:4px;
+    height:34px;
+    width:130px;
+    float:left;
+}
+#ckLoginAuto
+{
+    width:15px;
+    margin:0;
+    height:11px;
+    margin-top:1px;
+}
+.otherLogin
+{
+    float:right;
+    width:190px;
+    height:350px;
+    background-color:#5A5A5A;
+}
+#loginBtn
+{
+    margin-top:10px;
+    height:27px;
+    float:right;
+    color:White;
+    background-color:#9DD6C5;
+    text-align:center;
+    width:110px;
+    margin-right:26px;
+    padding-top:10px;
+    font-size:15px;
+    cursor:pointer;
+}
+.closeLogin
+{
+    float:right;
+    margin-right:20px;
+    font-size:14px;
+    color:white;
+    cursor:pointer;
+}
+.closeLogin:hover
+{
+    color:Red;
+}
+#newRegister
+{
+    margin-left:30px;
+    border:1px solid #666666;
+    color:white;
+    width:140px; 
+    height:30px; 
+    font-size:14px;
+    padding-top:4px;
+    padding-left:10px;
+    cursor:pointer;
+}
+
+/*左侧滑动
+.slide
+{
+    position:absolute;
+    left:-674px;
+    top:0;
+    width:674px;
+    height:650px;
+    z-index:300;
+    /*border:1px solid red;
+    background-color:#FFFFFF;
+}*/
+/*左侧容器*/
+.slide
+{
+    position:absolute;
+    top:0px;
+    left:-674px;
+    width:674px;
+    z-index:400;
+   /* height:700px;*/
+    overflow-y:auto;
+    background-color:#FFFFFF;
+    overflow-x:hidden;
+}
+/*滑块*/
+.slideBar
+{
+    position:absolute;
+    top:0px;
+    left:5px;
+    /*height:100%;*/
+    width:16px;
+    z-index:500; 
+    -webkit-box-shadow: 10px 0 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 10px 0 10px 0 rgba(0,0,0,0.1);
+    cursor:pointer;
+   /* background-color:#FFFFFF;*/
+}
+#slideTarget
+{
+     float:right;
+     margin-top:265px;
+     width:16px;
+     height:85px;
+   /*  background:url(../images/sidebar_icon.png)  0  0  no-repeat;*/
+     z-index:500;
+     cursor:pointer;
+}/*
+#slideTarget:hover
+{
+        background:url(../images/_sidebar_icon.png)  0  -85px  no-repeat;
+}*/
+.slideOpen
+{
+     background:url(../images/_sidebar_icon.png)  0  -85px  no-repeat;
+}
+.slideOpen:hover
+{
+     background:url(../images/_sidebar_icon.png)  0  0  no-repeat;
+}
+.slideClose
+{
+     background:url(../images/sidebar_icon.png)  0 0   no-repeat;
+}
+.slideClose:hover
+{
+    background:url(../images/sidebar_icon.png)  0  -85px  no-repeat;
+}
+
+
+/*右侧容器*/
+.mainList
+{
+    position:absolute;
+    top:150px;
+    left:220px;
+    width:920px;
+    margin:0 auto;
+    height:600px;
+    /*overflow:auto;*/
+    overflow-x:hidden;
+}
+
+
+/*横条*/
+.mainListBg
+{
+    position:absolute;
+    height:280px;
+    top:170px;
+    width:100%;
+    background-color:#E1E8E5;
+    z-index:10;
+    /*opacity:0.6;*/
+}
+
+/*盖住scroll  */
+.coverScroll
+{
+    position:absolute;
+    left:580px;
+    top:150px;
+    display:block;
+    width:24px;
+    height:400px;
+    z-index:300;
+}
+.covers
+{
+    background:url(../images/coverScroll.png) 0 -142px no-repeat;
+}
+/*分享歌*/
+#share
+{
+    position:absolute;
+    top:400px;
+    left:1065px;
+    z-index:300;
+    color:#999999;
+    cursor:pointer;
+    width:300px;
+    height:20px;
+}
+.coverShare
+{
+    position:absolute;
+    width:200px;
+    height:20px;
+    top:400px;
+    left:1140px;
+    z-index:301;
+    background-color:#E1E8E5;
+}
+#share div
+{
+    float:left;
+}
+#share a
+{
+    margin-left:10px;
+}
+
+/*手机客户端*/
+.fmCustomer
+{
+     color:#A3A3A3;
+     height:30px;
+     position:absolute;
+     top:340px;
+     left:720px;
+}
+.fmCustomer div
+{
+    float:left;
+}
+.allOpertion
+{
+     margin-left:15px;
+     height:25px;
+     width:100px;
+     background:url(../images/osicon_fm.png) 0 0 no-repeat;
+}
+.allOpertion:hover
+{
+    background:url(../images/osicon_fm.png) 0 -36px no-repeat;
+}
+.allOpertion a
+{
+     display:block;
+     width:30px;
+     height:30px;
+     float:left;
+}
+
+/*播放器*/
+.myPlayer
+{
+    position:absolute;
+    top:90px;
+    left:620px;
+    z-index:300;
+    width:510px;
+    height:250px;
+   /* background:url(../images/myPlayerBg.png) 0 0 no-repeat;*/
+}
+#player
+{
+    background-color:White;
+    display:block;
+    border:1px solid red;
+    width:35px;
+    height:35px;
+    float:right;
+    margin-right:10px;
+}
+#coverPic
+{
+     width:245px;
+     height:245px;
+     display:block;
+     float:left; 
+     cursor:pointer;
+}
+#songContent
+{
+    float:left;
+    background:white;
+    width:240px;
+    height:245px;
+    border:1px solid #E6E6E6;
+}
+.playerDiv
+{
+    width:220px;
+    padding-left:20px;
+}
+#songName
+{
+    height:20px;
+    font-size:18px;
+    margin-top:40px;
+    color:#A9A9A9;
+}
+#songDetail
+{
+    margin-top:20px;
+    color:#009966
+}
+#progressBar
+{
+    height:11px;
+    background:url(../images/players/progressBar.png) 0 0 no-repeat;
+}
+#horn span
+{
+    margin-left:175px;
+}
+#horn img
+{
+    cursor:pointer;
+}
+#songOperation
+{
+    margin-top:30px;
+    margin-left:70px;
+    height:30px;
+}
+#songOperation div 
+{
+    cursor:pointer;
+    float:left;
+    width:32px;
+    height:30px;
+    padding-left:20px;
+}
+#likeIt
+{
+    background:url(../images/players/heart.png) 0 0 no-repeat;
+}
+#dropIt
+{
+    background:url(../images/players/rubbishBins.png) 0 0 no-repeat;
+}
+#next
+{
+    background:url(../images/players/nextSong.png) 0 0 no-repeat;
+}
+
+/*广告*/
+.guanggaoContainer
+{
+     clear:both;
+     position:absolute;
+     top:555px;
+     height:100px;
+     width:100%;
+     display:block;
+     z-index:300;
+}
+#guanggaoImg
+{
+    margin:0 auto;
+    width:950px;
+    height:90px;
+    border:1px solid #d9d9d9;
+    cursor:pointer;
+    background:url(../images/advertise/app.png);
+}
+
+/*copyAllright*/
+.footer
+{
+    position:relative;
+    top:480px;
+    display:block;
+    height:80px;
+    color:#999999;
+   
+}
+.rightAndCooperation,.owner
+{
+    width:100%;
+    text-align:center;
+    margin-top:10px;
+    height:40px;
+}
+
+   

@@ -1,0 +1,303 @@
+﻿body 
+{
+    padding: 0px;
+    margin: 0px;
+}
+a
+{
+    text-decoration:none;
+    color:#A6ACAF;
+}
+.leftContent
+{
+     height:100%;
+     overflow-x:hidden;
+     overflow-y:auto;
+}
+#leftContent_top
+{
+    height:170px;
+
+}
+.leftContent_logo, .leftContent_search
+{
+    margin-top:75px;
+}
+.leftContent_logo
+{
+    font-size:21px;
+    color:#A6ACAF;
+    width:200px;
+    float:left;
+    margin-left:50px;
+}
+.leftContent_search
+{
+    border:1px solid #E4EBE9;
+    width:245px;
+    height:30px;
+    float:right;
+    margin-right:35px;
+}
+.searchCotent
+{
+    color:#A6ACAF;
+    padding-right:3px;
+    padding-left:6px;
+    border:0;
+    max-width:210px;
+    width:210px;
+    height:27px;
+}
+.searchBtn
+{
+     background:url(../images/search_btn.png) 0 0 no-repeat;
+     border:0;
+     width:26px;
+     height:20px;
+    
+}
+/*图片滚动*/
+.picScroll
+{
+     height:280px;
+     background-color:#E2E8E6;
+}
+#picContainer
+{
+    float:left;
+    width:290px;
+    height:276px;
+    overflow:hidden;
+}
+#picContainer ul
+{
+    padding:0;
+    margin:0;
+    width:1150px;
+}
+#picContainer ul li
+{
+    float:left;
+    height:290px;
+    width:276px;
+    list-style:none;
+}
+.imgDiv
+{
+    height:290px;
+    width:276px;
+}
+#picList
+{
+     float:right;
+     margin-right:25px;
+     width:340px;
+     height:276px;
+}
+
+/*MHZ分页*/
+#picPageNum
+{
+     height:16px;
+     padding-top:25px;
+}
+#picPageNum ul
+{
+    margin:0;
+    padding:0;
+}
+#picPageNum ul li
+{
+    list-style:none;
+    float:left;
+    height:16px;
+    width:16px;
+    margin-left:10px;
+    cursor:pointer;   
+}
+.imgPage
+{
+    height:16px;
+    text-align:center;
+    font-size:12px;
+}
+.selectedPage
+{
+    background:url(../images/slide/8.png) 0 50% no-repeat;
+}
+.unSelectedPage
+{
+     background:url(../images/slide/9.png) 0 50% no-repeat;
+}
+/*mhz的内容*/
+#biaoqianContent
+{
+    height:100%;
+}
+.musicType, .hotBiaoqian, .upFastBiaoqian, .pinpaiBiaoqian
+{
+    width:430px;
+    margin:0 auto;
+    margin-top:30px;
+    display:block;
+
+}
+.hotBiaoqian,.upFastBiaoqian
+{
+    height:300px;
+}
+/*
+.pinpaiBiaoqian
+{
+    height:200px;
+}*/
+#mheDetail
+{
+    color:#A6ACAF;
+    padding-left:10px;
+}
+#mheDetail div
+{
+    padding-top:12px;
+}
+.contentTitle
+{
+    font-size:15px;
+    height:24px;
+    color:#636564;
+}
+.contentTitle span
+{
+    float:left;
+}
+
+/*各种音乐*/
+.musicType
+{
+    height:50px;
+    font-size:12px;
+}
+.musicTypeList
+{
+    width:490px;
+    color:#888888;
+}
+.musicTypeList span
+{
+    float:left;
+    margin-left:7px;
+    margin-top:2px;
+}/*
+.musicTypeList span a
+{
+    margin-left:5px;
+}
+
+.musicTypeList span:hover
+{
+    color:#55BB99;
+}
+*/
+.musicTypeList a ,#moreHotBiaoqian
+{
+    text-decoration:none;
+    color:#A6ACAF;
+}
+.musicTypeList a:hover ,#moreHotBiaoqian:hover
+{
+        color:#55BB99;
+}
+.listCutLine
+{
+    display:block;
+    width:4px;
+    height:17px;
+    background:url(../images/slide/musicListCutline.png) 0 0 no-repeat;
+}
+
+/*兆赫*/
+.hotTitle
+{
+    font-size:14px;
+    color:Black;
+}
+#moreHotBiaoqian
+{
+    text-decoration:none;
+    font-size:12px;
+}
+.hotContainer
+{
+    margin-top:5px;
+    width:440px;
+    display:block;
+}
+.hotContainer ul
+{
+    margin:0;
+    padding:0;
+    display:block;
+}
+.hotContainer ul li
+{
+    list-style:none;
+    float:left;
+    width:220px;
+    height:45px;
+    margin-top:20px;
+}
+.hot_img, .hot_note
+{
+    float:left;
+}
+.hot_img
+{
+     width:45px;
+     height:45px;
+     cursor:pointer;
+}
+.hot_note
+{
+    width:160px;
+    margin-left:8px;
+}
+.hot_noteTitle
+{
+    font-size:13px;
+    color:Black;
+    cursor:pointer;
+}
+.hot_noteExplation a ,.hot_noteExplation label
+{
+    font-size:11px;
+    text-decoration:none;
+    color:#A6ACAF;
+}
+.viewMoreSong
+{
+    margin-left:5px;
+}
+/*兆赫的Hover效果*/
+.hoverContent
+{
+    border:1px solid #E0E7E5; 
+    height:110px; 
+    width:264px; 
+    position:absolute;
+    background-color:#FFFFFF;
+    font-size:12px;
+    color:#A6ACAF;
+}
+.hoverContentJianjie ,.hoverContentHotSongs
+{
+    height:35px;
+    margin:0 auto;
+    width:245px;
+    margin-top:10px;
+}
+/*申请制作*/
+#askForMHz
+{
+     float:right;
+} 

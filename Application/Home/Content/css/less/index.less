@@ -1,0 +1,196 @@
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  #over-lay {
+    //width: 2032px;
+    //height: 1024px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #eaedec;
+    opacity: 0.9;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+  }
+  .head {
+    height: 170px;
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+    #fm-logo {
+      display: block;
+      overflow: hidden;
+      background-color: #ffffff;
+      background: url("../../Content/img/logo.png") no-repeat;
+      height: 54px;
+      width: 131px;
+      padding-bottom: 38px;
+      zoom: 1;
+      margin:50px 741px 0px 28px;
+    }
+    .user {
+      background: transparent;
+      position: absolute;
+      color: #999;
+      height: 30px;
+      padding-bottom: 30px;
+      right: 0px;
+      top: 0px;
+      ul {
+        li {
+          float: left;
+          border-right: 1px solid #cccccc;
+          padding-right: 5px;
+        }
+        #open {
+          border: none;
+        }
+      }
+    }
+  }
+
+  #fm-bg {
+    min-height: 280px;
+    width: 100%;
+    background-color: #e1e8e5;
+    top: 170px;
+    z-index: -2;
+    position: absolute;
+  }
+
+  .list-container {
+    width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    .list-wrapper {
+      width: 285px;
+      z-index: 20;
+      .main-list {
+        width: 225px;
+        padding: 33px 28px;
+        //min-height: 300px;
+        .chanel  {
+          .line {
+            width: 163px;
+            display: inline-block;
+            height: 0;
+            bottom: 3px;
+            left: 10px;
+            border-bottom: 1px solid #999999;
+            opacity: 0.3;
+            position: relative;
+            margin-left: 7px;
+          }
+          ul {
+            li {
+              font-size: 13px;
+              width: 228px;
+              height: 38px;
+              line-height: 38px;
+              color: #333;
+              margin-bottom: 18px;
+              position: relative;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              background-color: rgba(198,211,205,0.5);
+              #play-music {
+                visibility: visible;
+                height: 11px;
+                width: 11px;
+                display: inline-block;
+                position: absolute;
+                top: 13px;
+                right: 21px;
+              }
+              >span {
+                padding-left: 20px;
+              }
+            }
+          }
+          >h3 {
+            width: 263px;
+            margin: 30px auto;
+          }
+        }
+      }
+    }
+  }
+
+
+  .footer {
+    //position: relative;
+    top: 480px;
+    height: 80px;
+    display: block;
+    color: #999;
+    text-align: center;
+    line-height: 40px;
+    .footer-info {
+      width: 100%;
+      height: 40px;
+      margin-top: 10px;
+    }
+    .title-info {
+      width: 100%;
+    }
+  }
+
+  .login-container {
+    z-index: 110;
+    width: 350px;
+    height: 555px;
+    position: absolute;
+    .left {
+      width: 285px;
+      height: 100%;
+      padding: 40px 37px 0 40px;
+      float: left;
+    }
+    #legend {
+      font-size: 18px;
+      color: #333;
+      padding: 0px;
+    }
+    .login-item {
+      color: #333;
+      position: relative;
+    }
+    .spec {
+      background-color: #eef1f0;
+      marign-top: 12px;
+      padding: 8px 10px;
+    }
+    >label {
+      float: none;
+    }
+    >input {
+
+    }
+    #user-name {
+      margin-right: 0px;
+    }
+    #password {
+
+    }
+    #pass-code {
+
+    }
+    .captcha {
+      width: 130px;
+      float: left;
+      margin-right: 5px;
+      #pass-code-img {
+        width: 130px;
+        height: 35px;
+      }
+    }
+
+
+  }
+}
+/*win 8 Ó¢ÎÄÈ«°ë½ÇÇÐ»»¿ì½Ý¼ü£ºshift+¿Õ¸ñ*/

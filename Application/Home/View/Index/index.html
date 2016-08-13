@@ -1,30 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <link type="text/css" href="__CSS__/index.css" rel="stylesheet">
     <title>FM</title>
 </head>
 <body>
-    index
+        <!--头部-->
+        <div class="head">
+            <div id="fm-logo"><a href="#"></a></div>
+            <div class="user">
+                <ul>
+                    <li id="login"><a href=""><label>登陆</label></a></li>
+                    <li id="register"><a href=""><label>马上注册</label></a></li>
+                    <li id="open"><a href=""><label>开启</label><span><img src="__IMG__/pro_icon.gif"/></span></a></li>
+                    <div class="clear:both"></div>
+                </ul>
+            </div>
+        </div>
+
+        <!--播放器-->
+        <div class="fm-play">
+            <div class="fm-left"></div>
+            <div class="fm-right"></div>
+        </div>
+
+        <!--侧边播放栏-->
+        <div class="side-bar">
+            <!--侧边播放栏滚动条-->
+            <div class="side-bar-ctrl"></div>
+        </div>
+
+        <!--FM列表-->
+        <div class="list-container">
+            <div class="list-wrapper">
+                <div class="main-list">
+                    <div class="chanel">
+                        <ul class="chanel-list">
+                            <li><span>我的私人兆赫</span></li>
+                            <li><span>我的红心兆赫</span></li>
+                            <li><span>豆瓣精选兆赫</span><img id="play-music" src="__IMG__/playing_w.gif"/></li>
+                        </ul>
+                    </div>
+                    <div class="chanel">
+                        <h3>最近收听<span class="line"></span></h3>
+                    </div>
+                    <div class="chanel">
+                        <h3>试试这些<span class="line"></span></h3>
+                        <ul class="chanel-list">
+                            <li><span>新歌&nbsp;MHz</span></li>
+                            <li><span>韩语&nbsp;MHz</span></li>
+                            <li><span>日语&nbsp;MHz</span></li>
+                        </ul>
+                    </div>
+                    <div class="chanel">
+                        <h3>品牌兆赫<span class="line"></span></h3>
+                        <ul class="chanel-list">
+                            <li><span>最初的梦想&nbsp;MHz</span></li>
+                            <li><span>下个路口见&nbsp;MHz</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--FM背景-->
+        <div id="fm-bg"></div>
+
+        <!--尾部-->
+        <div class='footer'>
+            <div class='footer-info'>
+                <p class='left-info'>&copy;2013 douban 京ICP备11027288号 网络视听许可证0110418号 京公网安备110105012274
+                    &nbsp; &nbsp; &nbsp;
+                    <label>广告合作:</label>
+                    <a href=''><label>adfm@douban.com</label></a>
+                    <label>|</label>
+                    <a href=''><label>FM游乐场</label></a>
+                    <label>|</label>
+                    <a href=''><label>FM用户手册</label></a>
+                    <label>|</label>
+                </p>
+            </div>
+            <div class='title-info'><a href=''><label>豆瓣FM中心</label></a></div>
+        </div>
+
 </body>
-<script src="__JS__/lib/jquery-1.8.2.min.js"></script>
 <script>
-    $(function(){
-
-        var baseUrl='__API_URL__'+'/';
-
-        var para={
-            name:'hisihi',
-            pwd:'123456',
-            code:'W4r0'
-        };
-        $.post(baseUrl+'login',para,function(result){
-            alert(result);
-        });
-
-        $.get(baseUrl+'getBannerInfo',null,function(result){
-//            alert(result);
-        });
-    });
+    window.fmUrlObject={
+        baseUrlApi:'__API_URL__'+'/',
+        img:'__IMG__',
+    };
+    window.baseApiUrl='__API_URL__'+'/';
 </script>
+<script src="__JS__/lib/jquery-1.8.2.min.js"></script>
+<script src="__JS__/customer/login.js" type="text/javascript"></script>
+<script src="__JS__/index.js" type="application/javascript"></script>
 </html>
