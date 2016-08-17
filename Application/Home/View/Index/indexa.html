@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>FM</title>
-    <link href="__CSS__/css/angular.css" type="text/css" rel="stylesheet"/>
+    <link href="__CSS__/angular.css" type="text/css" rel="stylesheet"/>
 </head>
 <body ng-app="MyFm">
     <div class="wrapper">
@@ -24,7 +24,14 @@
         </div>
         <div class="left-panel-bottom">
             <div class="left-panel-item banner-panel-item">
-                <div></div>
+                <img src="{{imgUrl}}"/>
+                <div class="right-info">
+                    <ul class="nav">
+                        <li ng-repeat="item in navs" ng-click="selectMe($index)" ng-class="{on:isSelect==$index}">
+                            {{item}}
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="left-panel-item music-type">
                 <ul>
