@@ -109,6 +109,235 @@ body .head .user ul li {
 body .head .user ul #open {
   border: none;
 }
+body .side-bar {
+  width: 674px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 999;
+  box-shadow: 10px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+body .side-bar .side-fm {
+  right: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 674px;
+  background-color: #fff;
+}
+body .side-bar .side-fm .head-fm {
+  position: relative;
+  height: 94px;
+  padding: 75px 50px 0;
+}
+body .side-bar .side-fm .head-fm #all-section {
+  height: 30px;
+  line-height: 30px;
+  color: #a2a8ac;
+  font-size: 30px;
+  outline: none;
+}
+body .side-bar .side-fm .head-fm #search {
+  position: absolute;
+  top: 70px;
+  right: 35px;
+  height: 30px;
+  width: 240px;
+  border: 1px solid #e1e8e6;
+  background-color: #ffffff;
+}
+body .side-bar .side-fm .head-fm #search .search-inner {
+  position: relative;
+}
+body .side-bar .side-fm .head-fm #search .search-inner .search-fm {
+  border: 0 none;
+  height: 23px;
+  line-height: 23px;
+  width: 195px;
+  outline: none;
+  padding: 4px 10px 0px;
+}
+body .side-bar .side-fm .head-fm #search .search-inner .search-btn {
+  position: absolute;
+  height: 30px;
+  width: 20px;
+  top: 0px;
+  background: url("../../Content/img/search_btn.png") no-repeat left 2px;
+  border: 0 none;
+  cursor: pointer;
+}
+body .side-bar .side-fm .banner {
+  background-color: #eff5f2;
+  height: 278px;
+  overflow: hidden;
+  color: #636564;
+  margin-bottom: 44px;
+}
+body .side-bar .side-fm .banner .banner-left {
+  float: left;
+  width: 290px;
+  height: 276px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+body .side-bar .side-fm .banner > img {
+  border-top: 1px solid #eff5f2;
+  border-bottom: 1px solid #eff5f2;
+}
+body .side-bar .side-fm .banner .banner-right {
+  float: right;
+  width: 329px;
+  padding-right: 25px;
+  margin-left: 30px;
+}
+body .side-bar .side-fm .banner .banner-right .banner-num {
+  height: 15px;
+  margin: 30px 0 26px;
+}
+body .side-bar .side-fm .banner .banner-right .banner-num > li {
+  color: #888;
+  float: left;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  border-radius: 16px;
+  background-color: #d4e1dc;
+  text-align: center;
+  margin-right: 4px;
+  cursor: pointer;
+}
+body .side-bar .side-fm .banner .banner-right .banner-num .on {
+  background-color: #9dd6c5;
+  cursor: default;
+}
+body .side-bar .side-fm .banner .banner-right .banner-info {
+  position: relative;
+  width: 235px;
+  height: 186px;
+}
+body .side-bar .side-fm .banner .banner-right .banner-info .banner-li {
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 21px;
+}
+body .side-bar .side-fm .banner .banner-right .banner-info .banner-li a:link {
+  color: #636564;
+}
+body .side-bar .side-fm .banner .banner-right .banner-info .banner-li a:hover {
+  color: #9dd6c5;
+}
+body .side-bar .side-fm .banner .banner-right .banner-info .banner-li > span {
+  display: inline-block;
+  zoom: 1;
+}
+body .side-bar .side-fm .banner .banner-right .banner-info .banner-li #icon {
+  width: 21px;
+  height: 21px;
+  padding-left: 2px;
+  background: url("../img/slide/10.png") right 50% no-repeat;
+}
+body .side-bar .side-fm .banner .banner-right .banner-info .p1 {
+  margin-bottom: 21px;
+}
+body .side-bar .side-fm .taglist-fm {
+  padding: 0 60px;
+  height: 60px;
+}
+body .side-bar .side-fm .taglist-fm > li {
+  float: left;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #cccccc;
+  color: #888;
+  line-height: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+body .side-bar .side-fm .taglist-fm > li:last-child {
+  border: none;
+}
+body .side-bar .side-fm .taglist-fm a:hover {
+  color: #5B9;
+}
+body .side-bar .side-fm .sidelist {
+  padding: 0 60px;
+  margin-top: 32px;
+}
+body .side-bar .side-fm .sidelist .fm-title {
+  margin-top: 19px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info {
+  margin-bottom: 20px;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list {
+  float: left;
+  width: 236px;
+  height: 45px;
+  overflow: hidden;
+  margin: 0 40px 25px 0;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-img {
+  position: relative;
+  float: left;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note {
+  margin-top: 3px;
+  float: left;
+  width: 180px;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-section {
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail {
+  color: #888;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail > label {
+  padding-right: 8px;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail .more-song {
+  padding-right: 8px;
+}
+body .side-bar #side-bar-ctrl {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  width: 26px;
+  z-index: 50;
+  cursor: pointer;
+}
+body .side-bar #side-bar-ctrl #side-ctrl-center {
+  position: absolute;
+  width: 16px;
+  height: 85px;
+  top: 312px;
+  margin-top: -43px;
+  margin-left: 10px;
+  background: url("../img/sidebar_icon.png") top left;
+}
+body .side-bar .sideOpen {
+  background: url("../images/_sidebar_icon.png") 0 -85px no-repeat;
+}
+body .side-bar .sideOpen:hover {
+  background: url("../images/_sidebar_icon.png") 0 0 no-repeat;
+}
+body .side-bar .slideClose {
+  background: url(../images/sidebar_icon.png) 0 0 no-repeat;
+}
+body .side-bar .slideClose:hover {
+  background: url(../images/sidebar_icon.png) 0 -85px no-repeat;
+}
 body #fm-bg {
   min-height: 280px;
   width: 100%;
@@ -227,202 +456,3 @@ body .login-container .captcha #pass-code-img {
   height: 35px;
 }
 /*win 8 Ӣ��ȫ�����л����ݼ���shift+�ո�*/
-#wrapper {
-  width: 674px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  z-index: 999;
-  box-shadow: 10px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-#wrapper .side-fm {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  overflow: hidden;
-  width: 674px;
-  background-color: #fff;
-}
-#wrapper .side-fm .head-fm {
-  position: relative;
-  height: 94px;
-  padding: 75px 50px 0;
-}
-#wrapper .side-fm .head-fm #all-section {
-  height: 30px;
-  line-height: 30px;
-  color: #a2a8ac;
-  font-size: 30px;
-  outline: none;
-}
-#wrapper .side-fm .head-fm #search {
-  position: absolute;
-  top: 70px;
-  right: 35px;
-  height: 30px;
-  width: 240px;
-  border: 1px solid #e1e8e6;
-  background-color: #ffffff;
-}
-#wrapper .side-fm .head-fm #search .search-inner {
-  position: relative;
-}
-#wrapper .side-fm .head-fm #search .search-inner .search-fm {
-  border: 0 none;
-  height: 23px;
-  line-height: 23px;
-  width: 195px;
-  outline: none;
-  padding: 4px 10px 0px;
-}
-#wrapper .side-fm .head-fm #search .search-inner .search-btn {
-  position: absolute;
-  height: 30px;
-  width: 20px;
-  top: 0px;
-  background: url("../../Content/img/search_btn.png") no-repeat left 2px;
-  border: 0 none;
-  cursor: pointer;
-}
-#wrapper .side-fm .banner {
-  background-color: #eff5f2;
-  height: 278px;
-  overflow: hidden;
-  color: #636564;
-  margin-bottom: 44px;
-}
-#wrapper .side-fm .banner .banner-left {
-  float: left;
-  width: 290px;
-  height: 276px;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
-#wrapper .side-fm .banner > img {
-  border-top: 1px solid #eff5f2;
-  border-bottom: 1px solid #eff5f2;
-}
-#wrapper .side-fm .banner .banner-right {
-  float: right;
-  width: 329px;
-  padding-right: 25px;
-  margin-left: 30px;
-}
-#wrapper .side-fm .banner .banner-right .banner-num {
-  height: 15px;
-  margin: 30px 0 26px;
-}
-#wrapper .side-fm .banner .banner-right .banner-num > li {
-  color: #888;
-  float: left;
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
-  border-radius: 16px;
-  background-color: #d4e1dc;
-  text-align: center;
-  margin-right: 4px;
-  cursor: pointer;
-}
-#wrapper .side-fm .banner .banner-right .banner-num .on {
-  background-color: #9dd6c5;
-  cursor: default;
-}
-#wrapper .side-fm .banner .banner-right .banner-info {
-  position: relative;
-  width: 235px;
-  height: 186px;
-}
-#wrapper .side-fm .banner .banner-right .banner-info .banner-li {
-  font-size: 18px;
-  line-height: 21px;
-  margin-bottom: 21px;
-}
-#wrapper .side-fm .banner .banner-right .banner-info .banner-li a:link {
-  color: #636564;
-}
-#wrapper .side-fm .banner .banner-right .banner-info .banner-li a:hover {
-  color: #9dd6c5;
-}
-#wrapper .side-fm .banner .banner-right .banner-info .banner-li > span {
-  display: inline-block;
-  zoom: 1;
-}
-#wrapper .side-fm .banner .banner-right .banner-info .banner-li #icon {
-  width: 21px;
-  height: 21px;
-  padding-left: 2px;
-  background: url("../img/slide/10.png") right 50% no-repeat;
-}
-#wrapper .side-fm .banner .banner-right .banner-info .p1 {
-  margin-bottom: 21px;
-}
-#wrapper .side-fm .taglist-fm {
-  padding: 0 60px;
-}
-#wrapper .side-fm .taglist-fm > li {
-  float: left;
-  padding-right: 10px;
-  margin-right: 10px;
-  border-right: 1px solid #cccccc;
-  color: #888;
-  line-height: 12px;
-  margin-bottom: 12px;
-  cursor: pointer;
-}
-#wrapper .side-fm .taglist-fm > li:last-child {
-  border: none;
-}
-#wrapper .side-fm .taglist-fm a:hover {
-  color: #5B9;
-}
-#wrapper .side-fm .sidelist {
-  padding: 0 60px;
-  margin-top: 32px;
-}
-#wrapper .side-fm .sidelist .fm-title {
-  margin-top: 19px;
-  margin-bottom: 20px;
-  font-size: 13px;
-}
-#wrapper .side-fm .sidelist .songs-sec .song-info {
-  margin-bottom: 20px;
-}
-#wrapper .side-fm .sidelist .songs-sec .song-info .song-list {
-  float: left;
-  width: 236px;
-  height: 45px;
-  overflow: hidden;
-  margin: 0 40px 25px 0;
-}
-#wrapper .side-fm .sidelist .songs-sec .song-info .song-list .song-img {
-  position: relative;
-  float: left;
-  width: 45px;
-  height: 45px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-#wrapper .side-fm .sidelist .songs-sec .song-info .song-list .song-note {
-  margin-top: 3px;
-  float: left;
-  width: 180px;
-}
-#wrapper .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-section {
-  font-size: 14px;
-  height: 20px;
-  line-height: 20px;
-}
-#wrapper .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail {
-  color: #888;
-}
-#wrapper .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail > label {
-  padding-right: 8px;
-}
-#wrapper .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail .more-song {
-  padding-right: 8px;
-}

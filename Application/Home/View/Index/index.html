@@ -25,10 +25,74 @@
             <div class="fm-right"></div>
         </div>
 
-        <!--侧边播放栏-->
+        <!--侧边全部兆赫-->
         <div class="side-bar">
+            <div class="side-fm">
+                <div class="side-fm-inner">
+                    <div class="side-fm-cont">
+                        <!--FM头部-->
+                        <div class="head-fm">
+                            <h2 id="all-section">全部兆赫</h2>
+                            <form id="search">
+                                <div class="search-inner">
+                                    <input class="search-fm" type="text" placeholder="搜索兆赫">
+                                    <input class="search-btn" type="submit" value title="搜索">
+                                </div>
+                            </form>
+                            <div clas="side-ctrl-fm">
+                                <div id="sidebar-ctrl" title="收起全部兆赫" data-opt-title="收起全部兆赫"></div>
+                            </div>
+                        </div>
+                        <!--FM banner-->
+                        <div class="banner">
+                            <ul class="banner-left">
+                                <li><img src="__IMG__/slide/17981.jpg"></li>
+                                <li><img src="__IMG__/slide/20815.jpg"></li>
+                                <li><img src="__IMG__/slide/23105.jpg"></li>
+                            </ul>
+                            <div class="banner-right">
+                                <ul class="banner-num">
+                                    <li class="on">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <!--::after-->
+                                </ul>
+                                <div class="banner-info">
+                                    <h3 class="banner-li"><a href="#">Wonderful Tonight<span>MHz</span></a><span id="icon"></span></h3>
+                                    <p class="p1">户外的时候听什么</p>
+                                    <p class="p1">热门歌曲：一万次悲伤 / 夜空中最亮的星 / 最初的梦想（Cover 范玮琪）</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--FM taglist-->
+                        <ul class="taglist-fm"></ul>
+                        <!--FM sidelist-->
+                        <div class="sidelist">
+                            <h3 class="fm-title">热门兆赫</h3>
+                            <div class="songs-sec">
+                                <ul class="song-info">
+                                    <li class="song-list">
+                                        <div class="song-img"><img src="__IMG__/slide/26379.jpg"></div>
+                                        <div class="song-note">
+                                            <div class="song-section">华语MHz</div>
+                                            <div class="song-detail"><label>8489首歌曲</label><a class="more-song">兆赫详情</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!--侧边播放栏滚动条-->
-            <div class="side-bar-ctrl"></div>
+            <div id="side-bar-ctrl">
+                <div id="side-ctrl-center" title="展开全部兆赫"></div>
+            </div>
         </div>
 
         <!--FM列表-->
@@ -64,6 +128,8 @@
             </div>
         </div>
 
+        <!--分享-->
+        <div class="listen"></div>
 
         <!--FM背景-->
         <div id="fm-bg"></div>

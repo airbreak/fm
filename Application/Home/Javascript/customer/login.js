@@ -11,39 +11,18 @@ $(document).ready(function () {
         var _top = wh / 2 - 350;
         var _left = ww / 2 - 555;
 
-        var loginBox = '<div class="login-container" style="top:' + _top + 'px;left:' + _left + 'px">' +
-            '<div class="left">' +
-                '<p id="legend">登陆</p>' +
-                '<div class="login-item spec"><input id="user-name" type="text"></div>' +
-                '<div class="login-item spec"><input id="password" type="text"></div>' +
-                '<div class="login-item spec captcha"><input id="pass-code" type="text"><img id="pass-code-img"/></div>' +
-                '<div class="login-item"><input class="login-check" type="checkbox"><span>下次自动登陆</span></div>' +
-                '<div class="login-item"><a href="#">忘记密码</a></div>' +
-                '<button id="login-btn"><label>登陆</label></button>' +
-                '<p>输入的账号或者密码有误</p>'+
-            '</div>' +
-            '<div class="right">' +
-                '<div class="closeLogin">X</div>'+
-                '<p>用其他账号登陆</p>' +
-                '<ul id="three-way">'+
-                    '<li><a href=""><span>新浪微博</span></a></li>'+
-                    '<li><a href=""><span>QQ</span></a></li>'+
-                    '<li><a href=""><span>MSN</span></a></li>'+
-                '</ul>'+
-                '<p>没有豆瓣FM账户？</p>'+
-                '<div id="register"><a href=""><label>立即注册</label></a></div>'+
-                '</div>'+
-            '</div>';
+        var loginBox = '<div class="login-container" style="top:' + _top + 'px;left:' + _left + 'px">' ;
         $("body").append(overlay + loginBox);
+
         //获得验证码
-        //getCheckCode();
+        getCheckCode();
     });
 
-    ///*someday I will be remember*/
-    //function getCheckCode() {
-    //    var codeUrl = window.fmUrlObject.img+"/checkCode.png";
-    //    $("#pass-code-img").attr("src", codeUrl);
-    //}
+    /*someday I will be remember*/
+    function getCheckCode() {
+        var codeUrl = window.fmUrlObject.img+"/checkCode.png";
+        $("#pass-code-img").attr("src", codeUrl);
+    }
 
     //关闭登录框
     $(".closeLogin").live("click", function () {
@@ -103,6 +82,5 @@ $(document).ready(function () {
             $(this).val("验证码");
         }
     });
-
 
 });

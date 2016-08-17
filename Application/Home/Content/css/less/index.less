@@ -4,6 +4,8 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+
+  //遮罩
   #over-lay {
     //width: 2032px;
     //height: 1024px;
@@ -17,6 +19,8 @@ body {
     top: 0;
     z-index: 99;
   }
+
+  //头部
   .head {
     height: 170px;
     width: 900px;
@@ -54,6 +58,254 @@ body {
     }
   }
 
+  //侧边全部兆赫
+  .side-bar {
+    //隐藏登陆框
+    //display: none;
+    width: 674px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 999;
+    box-shadow: 10px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    .side-fm {
+      //position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      overflow: hidden;
+      width: 674px;
+      background-color: #fff;
+
+      //头部
+      .head-fm {
+        position: relative;
+        height: 94px;
+        padding: 75px 50px 0;
+        #all-section {
+          height: 30px;
+          line-height: 30px;
+          color: #a2a8ac;
+          font-size: 30px;
+          outline: none;
+        }
+        #search {
+          position: absolute;
+          top: 70px;
+          right: 35px;
+          height: 30px;
+          width: 240px;
+          border: 1px solid #e1e8e6;
+          background-color: #ffffff;
+          .search-inner {
+            position: relative;
+            .search-fm {
+              border: 0 none;
+              height: 23px;
+              line-height: 23px;
+              width: 195px;
+              outline: none;
+              padding: 4px 10px 0px;
+            }
+            .search-btn {
+              position: absolute;
+              height: 30px;
+              width: 20px;
+              top: 0px;
+              background: url("../../Content/img/search_btn.png") no-repeat left 2px;
+              border: 0 none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      //中部banner
+      .banner {
+        background-color: #eff5f2;
+        height: 278px;
+        overflow: hidden;
+        color: #636564;
+        margin-bottom: 44px;
+        .banner-left {
+          float: left;
+          width: 290px;
+          height: 276px;
+          position: relative;
+          cursor: pointer;
+          overflow: hidden;
+        }
+        > img {
+          border-top: 1px solid #eff5f2;
+          border-bottom: 1px solid #eff5f2;
+        }
+        .banner-right {
+          float: right;
+          width: 329px;
+          padding-right: 25px;
+          margin-left: 30px;
+          .banner-num {
+            height: 15px;
+            margin: 30px 0 26px;
+            > li {
+              color: #888;
+              float: left;
+              width: 16px;
+              height: 16px;
+              line-height: 16px;
+              border-radius: 16px;
+              background-color: #d4e1dc;
+              text-align: center;
+              margin-right: 4px;
+              cursor: pointer;
+            }
+            .on {
+              background-color: #9dd6c5;
+              cursor: default;
+            }
+          }
+          .banner-info {
+            position: relative;
+            width: 235px;
+            height: 186px;
+            .banner-li {
+              font-size: 18px;
+              line-height: 21px;
+              margin-bottom: 21px;
+              a:link {
+                color: #636564;
+              }
+              a:hover {
+                color: #9dd6c5;
+              }
+              > span {
+                display: inline-block;
+                zoom: 1;
+              }
+              #icon {
+                width: 21px;
+                height: 21px;
+                padding-left: 2px;
+                background: url("../img/slide/10.png") right 50% no-repeat;
+              }
+            }
+            .p1 {
+              margin-bottom: 21px;
+            }
+          }
+        }
+
+      }
+
+      //taglist
+      .taglist-fm {
+        padding: 0 60px;
+        height: 60px;
+        > li {
+          float: left;
+          padding-right: 10px;
+          margin-right: 10px;
+          border-right: 1px solid #cccccc;
+          color: #888;
+          line-height: 12px;
+          margin-bottom: 12px;
+          cursor: pointer;
+          &:last-child {
+            border: none;
+          }
+        }
+        a:hover {
+          color: #5B9;
+        }
+      }
+
+      //sidelist
+      .sidelist {
+        padding: 0 60px;
+        margin-top: 32px;
+        .fm-title {
+          margin-top: 19px;
+          margin-bottom: 20px;
+          font-size: 13px;
+        }
+        .songs-sec {
+          .song-info {
+            margin-bottom: 20px;
+            .song-list {
+              float: left;
+              width: 236px;
+              height: 45px;
+              overflow: hidden;
+              margin: 0 40px 25px 0;
+              .song-img {
+                position: relative;
+                float: left;
+                width: 45px;
+                height: 45px;
+                margin-right: 10px;
+                cursor: pointer;
+              }
+              .song-note {
+                margin-top: 3px;
+                float: left;
+                width: 180px;
+                .song-section {
+                  font-size: 14px;
+                  height: 20px;
+                  line-height: 20px;
+                }
+                .song-detail {
+                  color: #888;
+                  > label {
+                    padding-right: 8px;
+                  }
+                  .more-song {
+                    padding-right: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+    #side-bar-ctrl {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      height: 100%;
+      width: 26px;
+      z-index: 50;
+      cursor:pointer;
+      //全部FM收起状态
+      #side-ctrl-center {
+        position: absolute;
+        width: 16px;
+        height: 85px;
+        top: 312px;
+        margin-top: -43px;
+        margin-left: 10px;
+        background: url("../img/sidebar_icon.png") top left;
+      }
+    }
+    .sideOpen {
+      background: url("../images/_sidebar_icon.png")  0  -85px  no-repeat;
+    }
+    .sideOpen:hover {
+      background: url("../images/_sidebar_icon.png") 0 0 no-repeat;
+    }
+    .slideClose {
+      background: url(../images/sidebar_icon.png) 0 0 no-repeat;
+    }
+    .slideClose:hover {
+      background: url(../images/sidebar_icon.png)  0  -85px  no-repeat;
+    }
+  }
+
+  //中部背景
   #fm-bg {
     min-height: 280px;
     width: 100%;
@@ -63,6 +315,7 @@ body {
     position: absolute;
   }
 
+  //中部滚动li
   .list-container {
     width: 900px;
     margin: 0 auto;
@@ -121,7 +374,7 @@ body {
     }
   }
 
-
+  //底部
   .footer {
     //position: relative;
     top: 480px;
@@ -140,57 +393,56 @@ body {
     }
   }
 
+  //登陆框
   .login-container {
-    z-index: 110;
-    width: 350px;
-    height: 555px;
-    position: absolute;
-    .left {
-      width: 285px;
-      height: 100%;
-      padding: 40px 37px 0 40px;
-      float: left;
-    }
-    #legend {
-      font-size: 18px;
-      color: #333;
-      padding: 0px;
-    }
-    .login-item {
-      color: #333;
-      position: relative;
-    }
-    .spec {
-      background-color: #eef1f0;
-      marign-top: 12px;
-      padding: 8px 10px;
-    }
-    >label {
-      float: none;
-    }
-    >input {
+     z-index: 110;
+     width: 350px;
+     height: 555px;
+     position: absolute;
+     .left {
+       width: 285px;
+       height: 100%;
+       padding: 40px 37px 0 40px;
+       float: left;
+     }
+     #legend {
+       font-size: 18px;
+       color: #333;
+       padding: 0px;
+     }
+     .login-item {
+       color: #333;
+       position: relative;
+     }
+     .spec {
+       background-color: #eef1f0;
+       marign-top: 12px;
+       padding: 8px 10px;
+     }
+     >label {
+       float: none;
+     }
+     >input {
 
-    }
-    #user-name {
-      margin-right: 0px;
-    }
-    #password {
+     }
+     #user-name {
+       margin-right: 0px;
+     }
+     #password {
 
-    }
-    #pass-code {
+     }
+     #pass-code {
 
-    }
-    .captcha {
-      width: 130px;
-      float: left;
-      margin-right: 5px;
-      #pass-code-img {
-        width: 130px;
-        height: 35px;
-      }
-    }
-
-
-  }
+     }
+     .captcha {
+       width: 130px;
+       float: left;
+       margin-right: 5px;
+       #pass-code-img {
+         width: 130px;
+         height: 35px;
+       }
+     }
+   }
 }
 /*win 8 英文全半角切换快捷键：shift+空格*/
