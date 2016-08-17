@@ -6,6 +6,9 @@ class IndexController extends Controller {
     public function index(){
         $this->display();
     }
+    public function indexa(){
+        $this->display();
+    }
 
     /*右侧滚动banner*/
     public function getBannerInfo(){

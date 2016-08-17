@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FM</title>
+    <link href="__CSS__/css/angular.css" type="text/css" rel="stylesheet"/>
+</head>
+<body ng-app="MyFm">
+    <div class="wrapper">
+
+    </div>
+    <div class="left-panel" ng-controller="leftPanelController">
+        <div class="slider-bar">
+            <div class="slider-btn">
+                <label><</label>
+            </div>
+        </div>
+        <div class="left-panel-top">
+            <div class="left-logo">全部兆赫</div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索……">
+                <span></span>
+            </div>
+        </div>
+        <div class="left-panel-bottom">
+            <div class="left-panel-item banner-panel-item">
+                <div></div>
+            </div>
+            <div class="left-panel-item music-type">
+                <ul>
+                    <li ng-repeat="item in musicTypes">
+                        {{item}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.fmUrlObject={
+        baseUrlApi:'__API_URL__'+'/',
+        img:'__IMG__',
+    };
+</script>
+<script type="application/javascript" src="__JS__/lib/angular.min.js"></script>
+<script type="application/javascript" src="__JS__/customer/myangular/index.js"></script>
+</html>
