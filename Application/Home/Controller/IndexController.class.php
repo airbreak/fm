@@ -12,7 +12,7 @@ class IndexController extends Controller {
 
     /*右侧滚动banner*/
     public function getBannerInfo(){
-        $str=$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
+        $str='http://'.$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
         $aa1=array(
             "Id"=>"img0",
             "imgName"=>$str."20815.jpg",
