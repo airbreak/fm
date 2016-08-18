@@ -5,10 +5,15 @@
 var myMoudle=angular.module('MyFm',[]);
 
 myMoudle.controller('sliderBarController',['$scope',function($scope){
-    $scope.showMe = false;
+    $scope.arrow='<';
+    $scope.isHide = false;
     $scope.toggle = function toggle() {
-        $scope.showMe = !$scope.showMe;
-
+        if($scope.isHide){
+            $scope.arrow='<';
+        }else{
+            $scope.arrow='>';
+        }
+        $scope.isHide = !$scope.isHide;
     }
 }]);
 

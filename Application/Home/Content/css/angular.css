@@ -13,7 +13,7 @@ ul li {
 }
 .slider-bar {
   position: absolute;
-  left: 655px;
+  left: 640px;
   width: 20px;
   height: 100%;
   background-color: #fff;
@@ -46,21 +46,30 @@ ul li {
   top: 0;
   bottom: 0;
   background-color: #fff;
+  transition: all ease-out 0.4s;
+}
+.left-panel.hide {
+  opacity: 0.5;
+  left: -640px;
+}
+.left-panel .left-panel-main {
+  width: 660px;
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
-.left-panel .left-panel-top {
+.left-panel .left-panel-main .left-panel-top {
   height: 70px;
   margin: 65px 0;
   position: relative;
   padding: 0 50px;
 }
-.left-panel .left-panel-top .left-logo {
+.left-panel .left-panel-main .left-panel-top .left-logo {
   color: #a2a8ac;
   font-size: 30px;
   line-height: 30px;
 }
-.left-panel .left-panel-top .search-box {
+.left-panel .left-panel-main .left-panel-top .search-box {
   width: 235px;
   height: 28px;
   position: absolute;
@@ -69,7 +78,7 @@ ul li {
   border: 1px solid #e1e8e6;
   background-color: #fff;
 }
-.left-panel .left-panel-top .search-box input {
+.left-panel .left-panel-main .left-panel-top .search-box input {
   border: none;
   width: 200px;
   height: 26px;
@@ -77,7 +86,7 @@ ul li {
   display: inline-block;
   vertical-align: top;
 }
-.left-panel .left-panel-top .search-box span {
+.left-panel .left-panel-main .left-panel-top .search-box span {
   display: inline-block;
   vertical-align: top;
   width: 25px;
@@ -86,10 +95,10 @@ ul li {
   position: relative;
   left: -2px;
 }
-.left-panel .left-panel-bottom .normal-item {
+.left-panel .left-panel-main .left-panel-bottom .normal-item {
   padding: 0 50px;
 }
-.left-panel .left-panel-bottom .banner-panel-item {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item {
   width: 100%;
   height: 278px;
   margin-bottom: 50px;
@@ -97,21 +106,21 @@ ul li {
   padding: 0;
   background-color: #eff5f2;
 }
-.left-panel .left-panel-bottom .banner-panel-item img {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item img {
   position: absolute;
   height: 278px;
   width: 278px;
   left: 0;
   top: 0;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info {
   margin-left: 298px;
   padding-top: 20px;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info > * {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info > * {
   padding-right: 16px;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .nav li {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .nav li {
   display: inline-block;
   height: 16px;
   width: 16px;
@@ -124,68 +133,68 @@ ul li {
   line-height: 16px;
   cursor: pointer;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .nav li.on {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .nav li.on {
   background-color: #9dd6c5;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .title-name {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .title-name {
   font-size: 18px;
   color: #636564;
   margin: 30px 0;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .title-name:hover {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .title-name:hover {
   color: #9dd6c5;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .title-name > span {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .title-name > span {
   float: left;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .title-name .mhz-icon {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .title-name .mhz-icon {
   margin-left: 5px;
   display: inline-block;
   height: 21px;
   width: 21px;
   background: url(../img/slide/10.png);
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .description {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .description {
   font-size: 12px;
   color: #636564;
   margin: 50px 0;
   line-height: 21px;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .hot-songs {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .hot-songs {
   font-size: 12px;
   color: #808080;
   margin-bottom: 20px;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .hot-songs span::after {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .hot-songs span::after {
   content: '/';
   width: 0;
   height: 0;
   padding: 0 5px;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .hot-songs span:last-child::after {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .hot-songs span:last-child::after {
   content: '';
   width: 0;
   height: 0;
   padding: 0 5px;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .total {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .total {
   font-size: 12px;
   color: #808080;
   margin-bottom: 20px;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .total a {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .total a {
   margin-left: 10px;
   text-underline: none;
   color: #808080;
 }
-.left-panel .left-panel-bottom .banner-panel-item .right-info .total a:hover {
+.left-panel .left-panel-main .left-panel-bottom .banner-panel-item .right-info .total a:hover {
   color: #9dd6c5;
 }
-.left-panel .left-panel-bottom .music-type {
+.left-panel .left-panel-main .left-panel-bottom .music-type {
   padding: 0 50px;
   margin: 10px 0;
 }
-.left-panel .left-panel-bottom .music-type ul li {
+.left-panel .left-panel-main .left-panel-bottom .music-type ul li {
   display: inline-block;
   padding: 0 6px;
   border-right: 1px solid #ccc;
@@ -195,35 +204,35 @@ ul li {
   color: #888;
   cursor: pointer;
 }
-.left-panel .left-panel-bottom .music-type ul li:hover {
+.left-panel .left-panel-main .left-panel-bottom .music-type ul li:hover {
   color: #9dd6c5;
 }
-.left-panel .left-panel-bottom .music-type ul li:last-child {
+.left-panel .left-panel-main .left-panel-bottom .music-type ul li:last-child {
   border: none;
 }
-.left-panel .left-panel-bottom .mhz-box-item {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item {
   margin-bottom: 20px;
   padding: 0 50px;
 }
-.left-panel .left-panel-bottom .mhz-box-item h3 {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item h3 {
   color: #000;
   font-size: 13px;
   margin: 40px 0;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li {
   display: inline-block;
   height: 68px;
   width: 236px;
   position: relative;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li:nth-of-type(2n+1) {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li:nth-of-type(2n+1) {
   margin: 0 25px 32px 0;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li.over .img-cover,
-.left-panel .left-panel-bottom .mhz-box-item ul li.over .hover-detail {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li.over .img-cover,
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li.over .hover-detail {
   display: block;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .img-cover {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .img-cover {
   display: none;
   position: absolute;
   height: 45px;
@@ -233,32 +242,32 @@ ul li {
   opacity: 0.85;
   background: url(../img/slide/07.png) 0 0 no-repeat;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li img {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li img {
   position: absolute;
   height: 45px;
   width: 45px;
   border-radius: 22px;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .mhz-item-info {
   margin-left: 53px;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:first-child {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:first-child {
   color: #000;
   font-size: 14px;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child {
   color: #888;
   font-size: 12px;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child a {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child a {
   margin-left: 5px;
   text-underline: none;
   color: #808080;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child a:hover {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child a:hover {
   color: #9dd6c5;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .hover-detail {
   display: none;
   position: absolute;
   left: 45px;
@@ -271,34 +280,21 @@ ul li {
   box-sizing: border-box;
   z-index: 100;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .hover-detail p {
   margin: 0;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p:first-child {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .hover-detail p:first-child {
   border-bottom: 1px dashed #808080;
   padding-bottom: 7px;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p:last-child {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .hover-detail p:last-child {
   margin-top: 10px;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p span {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .hover-detail p span {
   font-size: 12px;
   color: #808080;
 }
-.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p span:first-child {
+.left-panel .left-panel-main .left-panel-bottom .mhz-box-item ul li .hover-detail p span:first-child {
   color: #000;
   font-weight: bold;
-}
-.expander {
-  border: 1px solid black;
-  width: 250px;
-}
-.expander > .title {
-  background-color: black;
-  color: white;
-  padding: .1em .3em;
-  cursor: pointer;
-}
-.expander > .body {
-  padding: .1em .3em;
 }
