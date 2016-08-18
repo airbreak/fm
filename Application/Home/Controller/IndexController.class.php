@@ -99,7 +99,7 @@ class IndexController extends Controller {
 
     /*得到热门兆赫*/
     public function getHotMz(){
-        $str=$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
+        $str='http://'.$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
         $aa1=array(
             "musicTypeId"=>"huayu",
             "imgName"=>$str."huayu.png",
@@ -191,7 +191,7 @@ class IndexController extends Controller {
 
     /*得到上升最快兆赫*/
     public function getRaiseUpMz(){
-        $str=$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
+        $str='http://'.$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
         $aa1=array(
             "musicTypeId"=>"huayu",
             "imgName"=>$str."huayu.png",
@@ -253,7 +253,7 @@ class IndexController extends Controller {
 
     /*得到品牌兆赫*/
     public function getBrandMz(){
-        $str=$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
+        $str='http://'.$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
         $aa1=array(
             "musicTypeId"=>"oumei",
             "imgName"=>$str."oumei.png",

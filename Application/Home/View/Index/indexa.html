@@ -9,12 +9,12 @@
     <div class="wrapper">
 
     </div>
-    <div class="left-panel" ng-controller="leftPanelController">
-        <div class="slider-bar">
-            <div class="slider-btn">
-                <label><</label>
-            </div>
+    <div class="slider-bar">
+        <div class="slider-btn">
+            <label><</label>
         </div>
+    </div>
+    <div class="left-panel">
         <div class="left-panel-top">
             <div class="left-logo">全部兆赫</div>
             <div class="search-box">
@@ -22,25 +22,50 @@
                 <span></span>
             </div>
         </div>
+
         <div class="left-panel-bottom">
-            <div class="left-panel-item banner-panel-item">
+            <div class="left-panel-item banner-panel-item" ng-controller="bannerController">
                 <img src="{{imgUrl}}"/>
                 <div class="right-info">
                     <ul class="nav">
-                        <li ng-repeat="item in navs" ng-click="selectMe($index)" ng-class="{on:isSelect==$index}">
+                        <li ng-repeat="item in navs" ng-mouseover="selectMe($index)" ng-class="{on:isSelect==$index}">
                             {{item}}
                         </li>
                     </ul>
+                    <p class="title-name"><span>{{title}}</span><span class="mhz-icon"></span><div style="clear: both;"></div></p>
+                    <p class="description">{{description}}</p>
+                    <p class="hot-songs">
+                        <label>热门歌曲：</label>
+                        <span ng-repeat="item in hotsongs">{{item}}</span>
+                    </p>
+                    <p class="total"><span>{{totalNums}}首歌曲</span><a href="">兆赫详情</a></p>
                 </div>
             </div>
-            <div class="left-panel-item music-type">
+            <div class="left-panel-item music-type" ng-controller="musicTypeController">
                 <ul>
                     <li ng-repeat="item in musicTypes">
                         {{item}}
                     </li>
                 </ul>
+
+            </div>
+
+            <!--热门兆赫-->
+            <div class="hotmhz" ng-controller="hotMzController">
+                <mhz expander-title="title"></mhz>
+            </div>
+
+            <!--上升最快兆赫-->
+            <div class="raiseupmhz" ng-controller="raiseUpMzController">
+                <mhz  expander-title="title"></mhz>
+            </div>
+
+            <!--品牌兆赫-->
+            <div class="brandmhz" ng-controller="brandMzController">
+                <mhz   expander-title="title"></mhz>
             </div>
         </div>
+
     </div>
 </body>
 <script>

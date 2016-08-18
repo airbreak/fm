@@ -11,22 +11,15 @@ ul {
 ul li {
   list-style: none;
 }
-.left-panel {
+.slider-bar {
   position: absolute;
-  width: 675px;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #fff;
-}
-.left-panel .slider-bar {
-  position: absolute;
-  right: 0;
+  left: 655px;
   width: 20px;
   height: 100%;
+  background-color: #fff;
   box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
-.left-panel .slider-bar .slider-btn {
+.slider-bar .slider-btn {
   height: 120px;
   width: 20px;
   background-color: #DFE8E5;
@@ -37,13 +30,23 @@ ul li {
   text-align: center;
   cursor: pointer;
 }
-.left-panel .slider-bar .slider-btn:hover {
-  background-color: #9DD6C5;
+.slider-bar .slider-btn:hover {
+  background-color: #9dd6c5;
 }
-.left-panel .slider-bar .slider-btn label {
+.slider-bar .slider-btn label {
   cursor: pointer;
   display: block;
   margin-top: 50px;
+}
+.left-panel {
+  position: absolute;
+  width: 675px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .left-panel .left-panel-top {
   height: 70px;
@@ -104,34 +107,197 @@ ul li {
   margin-left: 298px;
   padding-top: 20px;
 }
+.left-panel .left-panel-bottom .banner-panel-item .right-info > * {
+  padding-right: 16px;
+}
 .left-panel .left-panel-bottom .banner-panel-item .right-info .nav li {
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
   margin-right: 5px;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #D4E1DC;
   color: #808080;
   font-size: 12px;
   text-align: center;
-  line-height: 20px;
+  line-height: 16px;
   cursor: pointer;
 }
 .left-panel .left-panel-bottom .banner-panel-item .right-info .nav li.on {
   background-color: #9dd6c5;
 }
+.left-panel .left-panel-bottom .banner-panel-item .right-info .title-name {
+  font-size: 18px;
+  color: #636564;
+  margin: 30px 0;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .title-name:hover {
+  color: #9dd6c5;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .title-name > span {
+  float: left;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .title-name .mhz-icon {
+  margin-left: 5px;
+  display: inline-block;
+  height: 21px;
+  width: 21px;
+  background: url(../img/slide/10.png);
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .description {
+  font-size: 12px;
+  color: #636564;
+  margin: 50px 0;
+  line-height: 21px;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .hot-songs {
+  font-size: 12px;
+  color: #808080;
+  margin-bottom: 20px;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .hot-songs span::after {
+  content: '/';
+  width: 0;
+  height: 0;
+  padding: 0 5px;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .hot-songs span:last-child::after {
+  content: '';
+  width: 0;
+  height: 0;
+  padding: 0 5px;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .total {
+  font-size: 12px;
+  color: #808080;
+  margin-bottom: 20px;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .total a {
+  margin-left: 10px;
+  text-underline: none;
+  color: #808080;
+}
+.left-panel .left-panel-bottom .banner-panel-item .right-info .total a:hover {
+  color: #9dd6c5;
+}
 .left-panel .left-panel-bottom .music-type {
   padding: 0 50px;
-  margin: 10px;
+  margin: 10px 0;
 }
 .left-panel .left-panel-bottom .music-type ul li {
   display: inline-block;
   padding: 0 6px;
   border-right: 1px solid #ccc;
   color: #212121;
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 10px;
+  color: #888;
+  cursor: pointer;
+}
+.left-panel .left-panel-bottom .music-type ul li:hover {
+  color: #9dd6c5;
 }
 .left-panel .left-panel-bottom .music-type ul li:last-child {
   border: none;
+}
+.left-panel .left-panel-bottom .mhz-box-item {
+  margin-bottom: 20px;
+  padding: 0 50px;
+}
+.left-panel .left-panel-bottom .mhz-box-item h3 {
+  color: #000;
+  font-size: 13px;
+  margin: 40px 0;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li {
+  display: inline-block;
+  height: 68px;
+  width: 236px;
+  position: relative;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li:nth-of-type(2n+1) {
+  margin: 0 25px 32px 0;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li.over .img-cover,
+.left-panel .left-panel-bottom .mhz-box-item ul li.over .hover-detail {
+  display: block;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .img-cover {
+  display: none;
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  border-radius: 22px;
+  z-index: 50;
+  opacity: 0.85;
+  background: url(../img/slide/07.png) 0 0 no-repeat;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li img {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  border-radius: 22px;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info {
+  margin-left: 53px;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:first-child {
+  color: #000;
+  font-size: 14px;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child {
+  color: #888;
+  font-size: 12px;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child a {
+  margin-left: 5px;
+  text-underline: none;
+  color: #808080;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .mhz-item-info p:last-child a:hover {
+  color: #9dd6c5;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail {
+  display: none;
+  position: absolute;
+  left: 45px;
+  top: 55px;
+  min-height: 105px;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px 25px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p {
+  margin: 0;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p:first-child {
+  border-bottom: 1px dashed #808080;
+  padding-bottom: 7px;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p:last-child {
+  margin-top: 10px;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p span {
+  font-size: 12px;
+  color: #808080;
+}
+.left-panel .left-panel-bottom .mhz-box-item ul li .hover-detail p span:first-child {
+  color: #000;
+  font-weight: bold;
+}
+.expander {
+  border: 1px solid black;
+  width: 250px;
+}
+.expander > .title {
+  background-color: black;
+  color: white;
+  padding: .1em .3em;
+  cursor: pointer;
+}
+.expander > .body {
+  padding: .1em .3em;
 }
