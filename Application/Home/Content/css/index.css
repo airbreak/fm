@@ -62,7 +62,6 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 body #over-lay {
   width: 100%;
@@ -113,17 +112,14 @@ body .side-bar {
   width: 674px;
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
-  height: 100%;
   z-index: 999;
   box-shadow: 10px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow: auto;
+  overflow-x: hidden;
 }
 body .side-bar .side-fm {
-  right: 0;
-  top: 0;
-  height: 100%;
-  overflow: hidden;
   width: 674px;
   background-color: #fff;
 }
@@ -281,7 +277,7 @@ body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list {
   overflow: hidden;
   margin: 0 40px 25px 0;
 }
-body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-img {
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-left {
   position: relative;
   float: left;
   width: 45px;
@@ -289,24 +285,24 @@ body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-img {
   margin-right: 10px;
   cursor: pointer;
 }
-body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note {
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right {
   margin-top: 3px;
   float: left;
   width: 180px;
 }
-body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-section {
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right .song-section {
   font-size: 14px;
   height: 20px;
   line-height: 20px;
 }
-body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail {
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right .song-detail {
   color: #888;
 }
-body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail > label {
-  padding-right: 8px;
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right .song-detail > label {
+  margin: 0;
 }
-body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-note .song-detail .more-song {
-  padding-right: 8px;
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right .song-detail .more-song {
+  padding-left: 8px;
 }
 body .side-bar #side-bar-ctrl {
   position: absolute;

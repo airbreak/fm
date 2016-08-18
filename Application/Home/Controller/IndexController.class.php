@@ -96,7 +96,7 @@ class IndexController extends Controller {
 
     /*得到热门兆赫*/
     public function getHotMz(){
-        $str=$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
+        $str='http://'.$_SERVER['HTTP_HOST']. '/fm/Application/Home/Content/img/slide/';
         $aa1=array(
             "musicTypeId"=>"huayu",
             "imgName"=>$str."huayu.png",

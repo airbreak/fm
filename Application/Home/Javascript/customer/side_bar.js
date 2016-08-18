@@ -1,194 +1,231 @@
 /**
  * Created by hisihi on 2016/8/15.
  */
-/// <reference path="../libs/jquery-1.7.1.min.js" />
-function createLeftContent() {
-    getAllImgsInfo();
+/**
+ * Created by hisihi on 2016/8/15.
+ */
+$(function() {
 
-    //×ó±ß¶¥²¿ÄÚÈİ
-    var strContent_top = "<div id='leftContent_top'>" +
-        "<div class='leftContent_logo'>È«²¿Õ×ºÕ</div>" +
-        "<div class='leftContent_search'>" +
-        "<span>" +
-        "<input type='text'  class='searchCotent' value='ËÑË÷Õ×ºÕ'/>" +
-        "</span>" +
-        "<span>" +
-        "<input title='ËÑË÷' type='button'  class='searchBtn'/>" +
-        "</span>" +
-        "</div>" +
-        "</div>";
+    var para = {
+        name: 'hisihi',
+        pwd: '123456',
+        code: 'W4r0'
+    };
 
-    //×ó±ßÍ¼Æ¬¹ö¶¯ÇøÓòÄÚÈİ
-    var strContent_scrollPic = "<div class='picScroll'>" +
-        createScrollImg() +
-        "</div>";
+    //è·å–banneræ•°å­—ï¼Œæ”¹å˜å¯¼èˆªæ ·å¼
+    function setBannerNav(result) {
+        var banner_num = '';
+        var len1 = result.data.length;
+        for (var i = 0; i < len1; i++) {
+            var num = i + 1;
+            if (num == 1) {
+                banner_num += '<li class="on">' + num + '</li>';
+            } else {
+                banner_num += '<li>' + num + '</li>';
+            }
+        }
+        $('.banner-num').html(banner_num);
+    }
 
-    //bannerÂÖ²¥Í¼
-    $(document).ready(function () {
-        $(".banner-left").live("click", function () {
-            var targetImg=$(this)
-        });
+    //è·å¾—å³ä¾§æ»šåŠ¨banner
+    $.get(window.fmUrlObject.baseUrlApi + 'getBannerInfo', null, function (result) {
+        if (result.status == 'success') {
+            getArr(result);
+            setBannerNav(result);
+            var index = 0;
+            getChangeBanner(index);
+        }
     });
 
-    //ÈÈÃÅ±êÇ©ÄÚÈİ
-    var strContent_hotBiaoqian = "<div class='hotBiaoqian'>" +
-        createBiaoqian("ÈÈÃÅÕ×ºÕ", mhzArr) +
-        "</div>";
+    //è·å¾—éŸ³ä¹ç±»åˆ«
+    $.get(window.fmUrlObject.baseUrlApi + 'getMusicTypeInfo', null, function (result) {
+        if (result.status == 'success') {
+            var str_li = '';
+            var len = result.data.length;
+            for (var i = 0; i < len; i++) {
+                str_li += '<li><a href="">' + result.data[i] + '</a></li>';
+            }
+        }
+        $('.taglist-fm').html(str_li);
+    });
 
-    //ÉÏÉı×î¿ì
-    var strContent_upFastBiaoqian = "<div class='upFastBiaoqian'>" +
-        createBiaoqian("ÉÏÉı×î¿ì", mhzArr) +
-        "</div>";
+    //è·å¾—çƒ­é—¨å…†èµ«
+    $.get(window.fmUrlObject.baseUrlApi + 'getHotMz', null, function (result) {
+        if(result.status=='success') {
+            getMHzLi(result);
+            getAllMHz(result);
+            getMHzHover(result);
+        }
+    });
 
-    //Æ·ÅÆ±êÇ©
-    var strContent_pinpaiBiaoqian = "<div class='pinpaiBiaoqian'>" +
-        createBiaoqian("Æ·ÅÆÕ×ºÕ", mhzArr) +
-        "</div>";
+    //è·å¾—ä¸Šå‡å…†èµ«
+    //$.get(window.fmUrlObject.baseUrlApi + 'getRaiseUpMz', null, function (result) {
+    //    if(result.status=='success') {
+    //        getAllMHz(result);
+    //        getMHzLi(result);
+    //    }
+    //});
 
-    //×ÜµÄÄÚÈİ
-    var content = "<div class='leftContent'>" +
-        strContent_top +
-        strContent_scrollPic +
-        strContent_musicType +
-        strContent_hotBiaoqian +
-        strContent_upFastBiaoqian +
-        strContent_pinpaiBiaoqian +
-        "</div>";
-    $(".slide").append(content);
-}
+    //è·å¾—å“ç‰Œå…†èµ«
+    //$.get(window.fmUrlObject.baseUrlApi + 'getBrandMz', null, function (result) {
+    //    if(result.status=='success') {
+    //        getAllMHz(result);
+    //        getMHzLi(result);
+    //    }
+    //});
+
+    //è·å¾—çƒ­é—¨å…†èµ«ä¿¡æ¯ã€‚è·å¾—MHzæ•°æ®
+    function getAllMHz(result) {
+        var len = result.data.length;
+        for (var i = 0; i < len; i++) {
+            mhzArr.push(result.data[i]);
+        }
+    }
+
+    //è®¾ç½®å¾ªç¯æ•°ç»„ï¼Œå±•ç¤ºå…¨éƒ¨å…†èµ«æ•°æ®
+    function getMHzLi(result){
+        var mhz_li = '';
+        var len = result.data.length;
+        for (var i = 0; i < len; i++) {
+            var url=result.data[i].imgName;
+            mhz_li += '<li class="song-list">'+
+                '<div class="song-left">'+
+                '<img class="song-img" src="'+url+'">'+
+                '</div>'+
+                '<div class="song-right">'+
+                '<div class="song-section">' +result.data[i].musicTypeName+'</div>'+
+                '<div class="song-detail">'+
+                '<label>'+
+                result.data[i].songCounts+
+                '</label>'+
+                '<label>é¦–æ­Œæ›²</label>'+
+                '<a class="more-song">'+
+                //result.data[i].contentMain+
+                    'å…†èµ«è¯¦æƒ…'+
+                '</a>'+
+                '</div>'+
+                '</div>'+
+                '</li>';
+        }
+        $('.song-info').html(mhz_li);
+    }
 
 
-var imgArr = [];
-var mhzArr = [];
+    //hoverèœå•å®¹å™¨å’Œå†…å®¹
+    function getMHzHover(result) {
+        var hover_li = '';
+        var len =  result.data.length;
+        for (var i = 0; i < len; i++) {
+            hover_li += '<div class="hoverInfo">'+
+                '<label>ç®€ä»‹:</label>'+
+                    result.data[i].contentMain+
+                '<label id="song-detail">'+
+                '</label>'+
+                '</div>'+
+                '<div class="hoverHotSong">'+
+                '<label>çƒ­é—¨æ­Œæ›²ï¼š</label>'+
+                '<label id="song-more">'+
+                    result.data[i].hotSong_1 + ',' + result.data[i].hotSong_2 + ',' + result.data[i].hotSong_3+
+                '</label>'+
+                '</div>';
+        }
+        $('.hoverContent').html(hover_li);
+    }
+
+    //hoverå±•ç¤ºæ•ˆæœ
+    function showMHz(result) {
+        var Cont = function () {
+            var that=this;
+            this.eventName='click';
+            $(document).on(this.eventName,'.more-song',function(){
+                $('.hover-content').addClass('show').removeClass('hide');
+            });
+            $(document).on(this.eventName,'.close-map',function(){
+                $('.hover-content').removeClass('show').addClass('hide');
+            });
+        }
+    }
 
 
-//Í¼Æ¬¹ö¶¯
-function createScrollImg() {
-    var str_img = "";
-    str_img += getScrollImg(imgArr[0].imgName);   //µÚÒ»ÕÅÍ¼Æ¬
-    var str_content = getScrollContent(0);
-    var str_scrollImg = "<div id='picContainer'>" +
-        "<ul>" +
-        str_img +
-        "</ul>" +
-        "</div>" +
-        "<div id='picList'>" +
-        "<div id='picPageNum'>" +
-        getPage(imgArr.length) +
-        "</div>" +
-        "<div id='mheDetail'>" +
-        str_content +
-        "</div>" +
-        "</div>";
-    return str_scrollImg;
-}
-/*Í¼Æ¬ÄÚÈİ*/
-function getScrollImg(imageName) {
-    var str_img = "<li>" +
-        "<div class='imgDiv' style='background:url(./images/slide/" + imageName + ")'></div>" +
-        "</li>";
-    return str_img;
-}
+    //hoverç¦»å¼€æ•ˆæœ
+    function leveaMHz(obj) {
+        var imgObj = $(obj).find(".song-img");
+        var imgId = $(obj).attr("id");
+        $(imgObj).css("background", "url(./images/slide/" + imgId + ".png)");
+        $(".hoverContent").remove();
+    }
 
-/*¸÷ÖÖmhzÄÚÈİ ,½«Index´«Èë*/
-function getScrollContent(index) {
-    var str_content = "<div class='contentTitle'>" +
-        "<span>" + imgArr[index].contentTitle + "</span>" +
-        "<span id='" + imgArr[index].Id + "' class='hearThis' style='height:21px; margin-left:5px;cursor:pointer;; width:21px;background:url(./images/slide/10.png) 0 0 no-repeat;'></span>" +
-        "</div>" +
-        "<div style=' font-size:12px;color:#636564;'>" + imgArr[index].contentMain + "</div>" +
-        "<div style=' font-size:12px; color:#888888;'>" +
-        "<label>ÈÈÃÅ¸èÇú£º</label>" +
-        "<a href='javascript:void'>" + imgArr[index].hotSong_1 + "/</a>" +
-        "<a href='javascript:void'>" + imgArr[index].hotSong_2 + "/</a>" +
-        "<a href='javascript:void'>" + imgArr[index].hotSong_3 + "</a>" +
-        "</div>" +
-        "<div>" + imgArr[index].songCounts + "Ê×¸èÇú<a  href='javascript:void' >Õ×ºÕÏêÇé</a></div>";
-    return str_content;
-}
 
-/*Ò³Âë*/
-function getPage(pageCount) {
-    var str_page = "<ul>";
-    var pageClass = "";
-    for (var i = 0; i < pageCount; i++) {
-        str_page += "<li>";
-        if (i == 0) {
-            pageClass = "selectedPage";
+    //æ‰“å¼€FMå’Œå…³é—­FM
+    var leftShow = false;
+    var firstLoad = true;
+    //var firstLoad_share= true;
+    var DH = $(document).height();
+    $(".side").css("height", DH + "px");
+    $(".side-bar").css("height", DH + "px");
+
+    //å·¦ä¾§æ’­æ”¾åˆ—è¡¨
+    $("#side-bar-ctrl").click(function () {
+        if (leftShow) {
+            $(".side-bar").animate({left: "-648px"}, 600);
+            $(".side-fm").animate({left: "-674px"}, 600, function () {
+                leftShow = false;
+                $("#slideTarget").attr("title", "å±•å¼€");
+                $("#slideTarget").removeClass("slideClose").addClass("slideOpen");
+            });
         }
         else {
-            pageClass = "unSelectedPage";
+            $(".side-bar").animate({left: "0"}, 600);
+            $(".side-fm").animate({left: "0"}, 600, function () {
+                if (firstLoad) {
+                    firstLoad = false;
+                }
+                leftShow = true;
+                $("#side-bar-ctrl").attr("title", "å…³é—­");
+                $("#side-bar-ctrl").removeClass(".sideOpen").addClass(".sideClose");
+            });
         }
-        str_page += "<div title='" + parseInt(i + 1) + "' class='imgPage " + pageClass + "'>" + parseInt(i + 1) + "</div>";
-        str_page += "</li>";
-    }
-    str_page += "</ul>";
-    str_page += "</ul>";
-    return str_page;
-}
+    });
 
-var lastNum = -1;
+    var bannerArr = [];  //å®šä¹‰ä¸€ä¸ªæ»šåŠ¨Imgæ•°ç»„ å…¨å±€å˜é‡
+    var mhzArr = [];  //å®šä¹‰ä¸€ä¸ªæ‰€æœ‰mhzæ•°ç»„ å…¨å±€å˜é‡
 
-/*ÂÖ²¥Í¼*/
-$(".banner-left").live("mouseover", function () {
-    var imgIndex = parseInt($(this).html() - 1);
-    if (imgIndex != lastNum) {
-        var that = this;
-        imgChange(imgIndex, that);
-        lastNum = imgIndex;
-    }
-});
-$(".banner-left").live("mouseleave", function () {
-    return;
-});
-
-//ÉèÖÃÂÖ²¥Í¼
-
-
-function createBiaoqian(biaoqianType, arrMHz) {
-    var moreView = "";
-    if (biaoqianType != "Æ·ÅÆÕ×ºÕ") {
-        moreView = "<a href='javascript:void' id='more_" + biaoqianType + "'>&nbsp;&nbsp;¸ü¶à</a>";
-    }
-    var str_hotBiao = "<div class='hotTitle'>" +
-        "<label>" + biaoqianType + "</label>" + moreView +
-        "</div>" +
-        "<div class='hotContainer'>" +
-        "<ul>" + creatHotLi(arrMHz, biaoqianType) + "</ul>" +
-        "</div>";
-    return str_hotBiao;
-}
-
-/*
-FM-hover
- */
-$("li").live("mouseleave", function () {
-    leveaMHz(this);
-});
-
-function leveaMHz(obj) {
-    var imgObj = $(obj).find("img");
-    var imgId = $(obj).attr("id");
-    $(imgObj).css("background", "url(./images/slide/" + imgId + ".png)");
-    $("style").remove();
-}
-
-
-function getObjFromArr(id, arr) {
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i].musicTypeId == id) {
-            return arr[i];
+    //æ•°æ®æ”¾å…¥å˜é‡ä¸­ï¼Œæ–¹ä¾¿ä½¿ç”¨
+    function getArr(result) {
+        var len = result.data.length;
+        for (var i = 0; i < len; i++) {
+            bannerArr.push(result.data[i]);
         }
     }
-}
 
-$(".searchCotent").live("click", function () {
-    if ($(this).val() == "ËÑË÷Õ×ºÕ") {
-        $(this).val("");
+
+    //å›¾ç‰‡çš„åˆ‡æ¢
+    $(document).on('mouseover', ".banner-num li", function () {
+        //æ”¹å˜å¯¼èˆªé¢œè‰²
+        $(this).addClass('on');
+        $(this).siblings().removeClass('on');
+        //æ”¹å˜å›¾ç‰‡
+        var index = $(this).index();
+        getChangeBanner(index);
+    });
+
+    //è·å¾—bannerå›¾ç‰‡æ–‡å­—ä¿¡æ¯
+    function getChangeBanner(index) {
+        $('#banner-img').attr('src', bannerArr[index].imgName);
+        $('.banner-li a').text(bannerArr[index].contentTitle);
+        $('#text1').text(bannerArr[index].contentMain);
+        $('#text2').text(bannerArr[index].hotSong_1 + ',' + bannerArr[index].hotSong_2 + ',' + bannerArr[index].hotSong_3);
     }
-});
-$(".searchCotent").live("focusout", function () {
-    if ($(this).val() == "") {
-        $(this).val("ËÑË÷Õ×ºÕ");
-    }
+
+    /*æœç´¢Mhz*/
+    $(".search-inner").live("click", function () {
+        if ($(this).val() == "æœç´¢å…†èµ«") {
+            $(this).val("");
+        }
+    });
+    $(".search-inner").live("focusout", function () {
+        if ($(this).val() == "") {
+            $(this).val("æœç´¢å…†èµ«");
+        }
+    });
 });

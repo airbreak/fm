@@ -3,7 +3,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  //overflow: hidden;
 
   //ÕÚÕÖ
   #over-lay {
@@ -65,17 +65,13 @@ body {
     width: 674px;
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
-    height: 100%;
     z-index: 999;
     box-shadow: 10px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: auto;
+    overflow-x: hidden;
     .side-fm {
-      //position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      overflow: hidden;
       width: 674px;
       background-color: #fff;
 
@@ -239,7 +235,7 @@ body {
               height: 45px;
               overflow: hidden;
               margin: 0 40px 25px 0;
-              .song-img {
+              .song-left {
                 position: relative;
                 float: left;
                 width: 45px;
@@ -247,7 +243,7 @@ body {
                 margin-right: 10px;
                 cursor: pointer;
               }
-              .song-note {
+              .song-right {
                 margin-top: 3px;
                 float: left;
                 width: 180px;
@@ -259,10 +255,10 @@ body {
                 .song-detail {
                   color: #888;
                   > label {
-                    padding-right: 8px;
+                    margin: 0;
                   }
                   .more-song {
-                    padding-right: 8px;
+                    padding-left: 8px;
                   }
                 }
               }
@@ -304,6 +300,7 @@ body {
       background: url(../images/sidebar_icon.png)  0  -85px  no-repeat;
     }
   }
+
 
   //ÖÐ²¿±³¾°
   #fm-bg {
