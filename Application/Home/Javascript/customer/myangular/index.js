@@ -4,6 +4,15 @@
 
 var myMoudle=angular.module('MyFm',[]);
 
+myMoudle.controller('sliderBarController',['$scope',function($scope){
+    $scope.showMe = false;
+    $scope.toggle = function toggle() {
+        $scope.showMe = !$scope.showMe;
+
+    }
+}]);
+
+
 
 //banner
 myMoudle.controller('bannerController',['$scope','$http',function($scope,$http){
