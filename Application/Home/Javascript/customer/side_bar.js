@@ -106,6 +106,7 @@ $(function() {
         if (leftShow) {
             $(".side-bar").animate({left: "-648px"}, 600);
             $(".side-fm").animate({left: "-674px"}, 600, function () {
+            //$(".side-bar").animate({left: "-674px"}, 600, function () {
                 leftShow = false;
                 $("#slideTarget").attr("title", "展开");
                 $("#slideTarget").removeClass("slideClose").addClass("slideOpen");
@@ -114,6 +115,7 @@ $(function() {
         else {
             $(".side-bar").animate({left: "0"}, 600);
             $(".side-fm").animate({left: "0"}, 600, function () {
+                //$(".side-bar").animate({left: "0"}, 600, function () {
                 if (firstLoad) {
                     firstLoad = false;
                 }
@@ -121,7 +123,7 @@ $(function() {
                 $("#side-bar-ctrl").attr("title", "关闭");
                 $("#side-bar-ctrl").removeClass(".sideOpen").addClass(".sideClose");
             });
-        }
+        };
     });
 
     var bannerArr = [];  //定义一个滚动Img数组 全局变量
