@@ -122,6 +122,8 @@ body .side-bar {
 body .side-bar .side-fm {
   width: 674px;
   background-color: #fff;
+  position: absolute;
+  overflow-y: hidden;
 }
 body .side-bar .side-fm .head-fm {
   position: relative;
@@ -274,10 +276,12 @@ body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list {
   float: left;
   width: 236px;
   height: 45px;
-  overflow: hidden;
   margin: 0 40px 25px 0;
+  position: relative;
+  display: inline-block;
 }
 body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-left {
+  display: inline-block;
   position: relative;
   float: left;
   width: 45px;
@@ -285,9 +289,22 @@ body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-left {
   margin-right: 10px;
   cursor: pointer;
 }
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-left .cover-img {
+  position: absolute;
+  background: url('../img/slide/07.png') center center no-repeat;
+  top: 0px;
+  left: 0px;
+  width: 45px;
+  height: 45px;
+  display: none;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-left .song-img {
+  height: 45px;
+  width: 45px;
+}
 body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right {
   margin-top: 3px;
-  float: left;
+  padding-left: 50px;
   width: 180px;
 }
 body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right .song-section {
@@ -303,6 +320,36 @@ body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right .
 }
 body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .song-right .song-detail .more-song {
   padding-left: 8px;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .fm-hover {
+  display: none;
+  position: absolute;
+  left: 45px;
+  right: 55px;
+  min-height: 110px;
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 20px 25px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .fm-hover p {
+  margin: 0;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .fm-hover p:first-child {
+  border-bottom: 1px dashed #808080;
+  padding-bottom: 9px;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .fm-hover p:last-child {
+  padding-top: 9px;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .fm-hover span {
+  color: #808080;
+}
+body .side-bar .side-fm .sidelist .songs-sec .song-info .song-list .fm-hover span:first-child {
+  color: #000;
+  font-weight: bold;
 }
 body .side-bar #side-bar-ctrl {
   position: absolute;

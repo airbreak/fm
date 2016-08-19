@@ -74,7 +74,8 @@ body {
     .side-fm {
       width: 674px;
       background-color: #fff;
-
+      position: absolute;
+      overflow-y: hidden;
       //头部
       .head-fm {
         position: relative;
@@ -192,7 +193,6 @@ body {
             }
           }
         }
-
       }
 
       //taglist
@@ -233,19 +233,35 @@ body {
               float: left;
               width: 236px;
               height: 45px;
-              overflow: hidden;
               margin: 0 40px 25px 0;
+              position: relative;
+              display: inline-block;
               .song-left {
+                //display: none;
+                display: inline-block;
                 position: relative;
                 float: left;
                 width: 45px;
                 height: 45px;
                 margin-right: 10px;
                 cursor: pointer;
+                .cover-img {
+                  position: absolute;
+                  background: url('../img/slide/07.png') center center no-repeat;
+                  top: 0px;
+                  left: 0px;
+                  width: 45px;
+                  height: 45px;
+                  display: none;
+                }
+                .song-img {
+                  height: 45px;
+                  width: 45px;
+                }
               }
               .song-right {
                 margin-top: 3px;
-                float: left;
+                padding-left: 50px;
                 width: 180px;
                 .song-section {
                   font-size: 14px;
@@ -262,12 +278,45 @@ body {
                   }
                 }
               }
+              .fm-hover {
+                //隐藏hover元素
+                //display: inline-block;
+                display: none;
+                position: absolute;
+                left: 45px;
+                right: 55px;
+                min-height: 110px;
+                width: 300px;
+                background-color: #ffffff;
+                border: 1px solid #cccccc;
+                padding: 20px 25px;
+                box-sizing: border-box;
+                z-index: 100;
+                p {
+                  margin: 0;
+                  &:first-child {
+                    border-bottom: 1px dashed #808080;
+                    padding-bottom: 9px;
+                  }
+                  &:last-child {
+                    padding-top: 9px;
+                  }
+                }
+                span {
+                  color: #808080;
+                  &:first-child {
+                    color: #000;
+                    font-weight: bold;
+                  }
+                }
+              }
             }
           }
         }
       }
 
     }
+    //打开.关闭按钮
     #side-bar-ctrl {
       position: absolute;
       right: 0px;
@@ -287,6 +336,7 @@ body {
         background: url("../img/sidebar_icon.png") top left;
       }
     }
+
     .sideOpen {
       background: url("../images/_sidebar_icon.png")  0  -85px  no-repeat;
     }

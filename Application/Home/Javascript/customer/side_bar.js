@@ -1,9 +1,6 @@
 /**
  * Created by hisihi on 2016/8/15.
  */
-/**
- * Created by hisihi on 2016/8/15.
- */
 $(function() {
 
     var para = {
@@ -37,6 +34,12 @@ $(function() {
         }
     });
 
+    //banner自动切换
+    //function autoPlay() {
+    //    var n=n>=(bannerArr[index].length-1):?0,n+1;
+    //    $(".banner-left img").eq(n).trigger('mouseenter');
+    //}
+
     //获得音乐类别
     $.get(window.fmUrlObject.baseUrlApi + 'getMusicTypeInfo', null, function (result) {
         if (result.status == 'success') {
@@ -52,109 +55,43 @@ $(function() {
     //获得热门兆赫
     $.get(window.fmUrlObject.baseUrlApi + 'getHotMz', null, function (result) {
         if(result.status=='success') {
-            getMHzLi(result);
+            hotMHzLi(result);
             getAllMHz(result);
-            getMHzHover(result);
+            showMHz();
         }
     });
 
     //获得上升兆赫
-    //$.get(window.fmUrlObject.baseUrlApi + 'getRaiseUpMz', null, function (result) {
-    //    if(result.status=='success') {
-    //        getAllMHz(result);
-    //        getMHzLi(result);
-    //    }
-    //});
+    $.get(window.fmUrlObject.baseUrlApi + 'getRaiseUpMz', null, function (result) {
+        if(result.status=='success') {
+            getAllMHz(result);
+            upMHzLi(result);
+            showMHz();
+        }
+    });
 
     //获得品牌兆赫
-    //$.get(window.fmUrlObject.baseUrlApi + 'getBrandMz', null, function (result) {
-    //    if(result.status=='success') {
-    //        getAllMHz(result);
-    //        getMHzLi(result);
-    //    }
-    //});
-
-    //获得热门兆赫信息。获得MHz数据
-    function getAllMHz(result) {
-        var len = result.data.length;
-        for (var i = 0; i < len; i++) {
-            mhzArr.push(result.data[i]);
+    $.get(window.fmUrlObject.baseUrlApi + 'getBrandMz', null, function (result) {
+        if(result.status=='success') {
+            getAllMHz(result);
+            brandMHzLi(result);
+            showMHz();
         }
+    });
+
+    //hover展示效果(jquery选择器）
+    function showMHz() {
+        $(document).on('mouseover','.song-list',function(e){
+            var $target=$(e.currentTarget);
+            $target.find('.cover-img').show();
+            $target.find('.fm-hover').show();
+        });
+        $(document).on('mouseout','.song-list',function(e){
+            var $target=$(e.currentTarget);
+            $target.find('.cover-img').hide();
+            $target.find('.fm-hover').hide();
+        });
     }
-
-    //设置循环数组，展示全部兆赫数据
-    function getMHzLi(result){
-        var mhz_li = '';
-        var len = result.data.length;
-        for (var i = 0; i < len; i++) {
-            var url=result.data[i].imgName;
-            mhz_li += '<li class="song-list">'+
-                '<div class="song-left">'+
-                '<img class="song-img" src="'+url+'">'+
-                '</div>'+
-                '<div class="song-right">'+
-                '<div class="song-section">' +result.data[i].musicTypeName+'</div>'+
-                '<div class="song-detail">'+
-                '<label>'+
-                result.data[i].songCounts+
-                '</label>'+
-                '<label>首歌曲</label>'+
-                '<a class="more-song">'+
-                //result.data[i].contentMain+
-                    '兆赫详情'+
-                '</a>'+
-                '</div>'+
-                '</div>'+
-                '</li>';
-        }
-        $('.song-info').html(mhz_li);
-    }
-
-
-    //hover菜单容器和内容
-    function getMHzHover(result) {
-        var hover_li = '';
-        var len =  result.data.length;
-        for (var i = 0; i < len; i++) {
-            hover_li += '<div class="hoverInfo">'+
-                '<label>简介:</label>'+
-                    result.data[i].contentMain+
-                '<label id="song-detail">'+
-                '</label>'+
-                '</div>'+
-                '<div class="hoverHotSong">'+
-                '<label>热门歌曲：</label>'+
-                '<label id="song-more">'+
-                    result.data[i].hotSong_1 + ',' + result.data[i].hotSong_2 + ',' + result.data[i].hotSong_3+
-                '</label>'+
-                '</div>';
-        }
-        $('.hoverContent').html(hover_li);
-    }
-
-    //hover展示效果
-    function showMHz(result) {
-        var Cont = function () {
-            var that=this;
-            this.eventName='click';
-            $(document).on(this.eventName,'.more-song',function(){
-                $('.hover-content').addClass('show').removeClass('hide');
-            });
-            $(document).on(this.eventName,'.close-map',function(){
-                $('.hover-content').removeClass('show').addClass('hide');
-            });
-        }
-    }
-
-
-    //hover离开效果
-    function leveaMHz(obj) {
-        var imgObj = $(obj).find(".song-img");
-        var imgId = $(obj).attr("id");
-        $(imgObj).css("background", "url(./images/slide/" + imgId + ".png)");
-        $(".hoverContent").remove();
-    }
-
 
     //打开FM和关闭FM
     var leftShow = false;
@@ -198,6 +135,151 @@ $(function() {
         }
     }
 
+    //获得热门兆赫信息。获得MHz数据
+    function getAllMHz(result) {
+        var len = result.data.length;
+        for (var i = 0; i < len; i++) {
+            mhzArr.push(result.data[i]);
+        }
+    }
+
+    //设置循环数组，展示全部热门兆赫数据
+    function hotMHzLi(result){
+        var mhz_li = '';
+        var len = result.data.length;
+        for (var i = 0; i < len; i++) {
+            var url=result.data[i].imgName;
+            mhz_li += '<li class="song-list">'+
+                '<div class="song-left">'+
+                    '<div class="cover-img">'+
+                    '</div>'+
+                    '<img class="song-img" src="'+url+'">'+
+                '</div>'+
+                '<div class="song-right">'+
+                    '<div class="song-section">' +
+                        result.data[i].musicTypeName+
+                    '</div>'+
+                    '<div class="song-detail">'+
+                        '<label>'+
+                            result.data[i].songCounts+
+                        '</label>'+
+                        '<label>首歌曲</label>'+
+                        '<a class="more-song">'+
+                            '兆赫详情'+
+                        '</a>'+
+                    '</div>'+
+                '</div>'+
+                //fm hover
+                '<div class="fm-hover">'+
+                '<p>'+
+                '<span>简介：</span>'+
+                '<span>'+
+                result.data[i].contentMain+
+                '</span>'+
+                '</p>'+
+                '<p>'+
+                '<span>热门歌曲：</span>'+
+                '<span>'+
+                result.data[i].hotSong_1 + '/' + result.data[i].hotSong_2 + '/' + result.data[i].hotSong_3+
+                '</span>'+
+                '</p>';
+                '</div>';
+            '</li>';
+        }
+        $('#hot-song').html(mhz_li);
+    }
+
+    //设置循环数组，展示全部上升兆赫数据
+    function upMHzLi(result){
+        var mhz_li = '';
+        var len = result.data.length;
+        for (var i = 0; i < len; i++) {
+            var url=result.data[i].imgName;
+            mhz_li += '<li class="song-list">'+
+                '<div class="song-left">'+
+                '<div class="cover-img">'+
+                '</div>'+
+                '<img class="song-img" src="'+url+'">'+
+                '</div>'+
+                '<div class="song-right">'+
+                '<div class="song-section">' +
+                result.data[i].musicTypeName+
+                '</div>'+
+                '<div class="song-detail">'+
+                '<label>'+
+                result.data[i].songCounts+
+                '</label>'+
+                '<label>首歌曲</label>'+
+                '<a class="more-song">'+
+                '兆赫详情'+
+                '</a>'+
+                '</div>'+
+                '</div>'+
+                    //fm hover
+                '<div class="fm-hover">'+
+                '<p>'+
+                '<span>简介：</span>'+
+                '<span>'+
+                result.data[i].contentMain+
+                '</span>'+
+                '</p>'+
+                '<p>'+
+                '<span>热门歌曲：</span>'+
+                '<span>'+
+                result.data[i].hotSong_1 + '/' + result.data[i].hotSong_2 + '/' + result.data[i].hotSong_3+
+                '</span>'+
+                '</p>';
+            '</div>';
+            '</li>';
+        }
+        $('#up-song').html(mhz_li);
+    }
+
+    //设置循环数组，展示全部品牌兆赫数据
+    function brandMHzLi(result){
+        var mhz_li = '';
+        var len = result.data.length;
+        for (var i = 0; i < len; i++) {
+            var url=result.data[i].imgName;
+            mhz_li += '<li class="song-list">'+
+                '<div class="song-left">'+
+                '<div class="cover-img">'+
+                '</div>'+
+                '<img class="song-img" src="'+url+'">'+
+                '</div>'+
+                '<div class="song-right">'+
+                '<div class="song-section">' +
+                result.data[i].musicTypeName+
+                '</div>'+
+                '<div class="song-detail">'+
+                '<label>'+
+                result.data[i].songCounts+
+                '</label>'+
+                '<label>首歌曲</label>'+
+                '<a class="more-song">'+
+                '兆赫详情'+
+                '</a>'+
+                '</div>'+
+                '</div>'+
+                    //fm hover
+                '<div class="fm-hover">'+
+                '<p>'+
+                '<span>简介：</span>'+
+                '<span>'+
+                result.data[i].contentMain+
+                '</span>'+
+                '</p>'+
+                '<p>'+
+                '<span>热门歌曲：</span>'+
+                '<span>'+
+                result.data[i].hotSong_1 + '/' + result.data[i].hotSong_2 + '/' + result.data[i].hotSong_3+
+                '</span>'+
+                '</p>';
+            '</div>';
+            '</li>';
+        }
+        $('#brand-song').html(mhz_li);
+    }
 
     //图片的切换
     $(document).on('mouseover', ".banner-num li", function () {
@@ -228,4 +310,5 @@ $(function() {
             $(this).val("搜索兆赫");
         }
     });
+
 });
