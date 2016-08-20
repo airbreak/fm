@@ -11,7 +11,7 @@
             <div id="fm-logo"><a href="#"></a></div>
             <div class="user">
                 <ul>
-                    <li id="login"><a href=""><label>登陆</label></a></li>
+                    <li><div id="login"><label>登陆</label></div></li>
                     <li id="register"><a href=""><label>马上注册</label></a></li>
                     <li id="open"><a href=""><label>开启</label><span><img src="__IMG__/pro_icon.gif"/></span></a></li>
                     <div class="clear:both"></div>
@@ -78,13 +78,11 @@
                                 <div style="zoom:1;clear:both;"></div>
                             </div>
                         </div>
-
-                <!--侧边播放栏滚动条-->
-                <div id="side-bar-ctrl">
-                    <div id="side-ctrl-center" title="展开全部兆赫"></div>
-                </div>
             </div>
-
+            <!--侧边播放栏滚动条-->
+            <div id="side-bar-ctrl">
+                <div id="side-ctrl-center"></div>
+            </div>
         </div>
 
         <!--FM列表-->
@@ -141,6 +139,35 @@
                 </p>
             </div>
             <div class='title-info'><a href=''><label>豆瓣FM中心</label></a></div>
+        </div>
+
+        <!--登陆-->
+        <div class="login">
+            <div class="login-container">
+            <div class="left">
+                <p id="legend">登陆</p>
+                <div class="login-item spec"><input id="user-name" type="text"></div>
+                <div class="login-item spec"><input id="password" type="text"></div>
+                <div class="login-item spec captcha"><input id="pass-code" type="text"><img id="pass-code-img"/></div>
+                <div class="login-item"><input class="login-check" type="checkbox"><span>下次自动登陆</span></div>
+                <div class="login-item"><a href="#">忘记密码</a></div>
+                <button id="login-btn"><label>登陆</label></button>
+                <p>输入的账号或者密码有误</p>
+                </div>
+            <div class="right">
+                <div class="closeLogin">X</div>
+                <div class="third">
+                    <p>用其他账号登陆</p>
+                    <ul id="three-way">
+                        <li><a href=""><span>新浪微博</span></a></li>
+                        <li><a href=""><span>QQ</span></a></li>
+                        <li><a href=""><span>MSN</span></a></li>
+                        </ul>
+                    </div>
+                <p>没有豆瓣FM账户？</p>
+                <div id="register-now"><a href=""><label>立即注册</label></a></div>
+                </div>
+            </div>
         </div>
 
 </body>

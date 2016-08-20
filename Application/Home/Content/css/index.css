@@ -62,17 +62,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-}
-body #over-lay {
-  width: 100%;
-  height: 100%;
-  display: block;
-  background-color: #eaedec;
-  opacity: 0.9;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 99;
+  overflow: hidden;
 }
 body .head {
   height: 170px;
@@ -113,7 +103,7 @@ body .side-bar {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: -638px;
   z-index: 999;
   box-shadow: 10px 0px 10px 0px rgba(0, 0, 0, 0.1);
   overflow: auto;
@@ -369,17 +359,17 @@ body .side-bar #side-bar-ctrl #side-ctrl-center {
   margin-left: 10px;
   background: url("../img/sidebar_icon.png") top left;
 }
-body .side-bar .sideOpen {
-  background: url("../images/_sidebar_icon.png") 0 -85px no-repeat;
+body .side-bar #side-bar-ctrl .side-open {
+  background: url("../img/_sidebar_icon.png") 0 -85px no-repeat;
 }
-body .side-bar .sideOpen:hover {
-  background: url("../images/_sidebar_icon.png") 0 0 no-repeat;
+body .side-bar #side-bar-ctrl .side-open:hover {
+  background: url("../img/_sidebar_icon.png") 0 0 no-repeat;
 }
-body .side-bar .slideClose {
-  background: url(../images/sidebar_icon.png) 0 0 no-repeat;
+body .side-bar #side-bar-ctrl .side-close {
+  transform: rotate(180deg);
 }
-body .side-bar .slideClose:hover {
-  background: url(../images/sidebar_icon.png) 0 -85px no-repeat;
+body .side-bar #side-bar-ctrl .side-close:hover {
+  background: url(../img/sidebar_icon.png) 0 -85px no-repeat;
 }
 body #fm-bg {
   min-height: 280px;
@@ -457,45 +447,89 @@ body .footer .footer-info {
 body .footer .title-info {
   width: 100%;
 }
-body .login-container {
-  z-index: 110;
-  width: 350px;
-  height: 555px;
+body .login {
+  display: none;
+  top: 0;
+  left: 0;
+  min-width: 1024px;
+  width: 100%;
+  height: 100%;
+  background-color: #eaedec;
+  opacity: 0.9;
   position: absolute;
 }
-body .login-container .left {
+body .login .login-container {
+  left: 38%;
+  top: 35%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 555px;
+  height: 350px;
+  position: absolute;
+}
+body .login .login-container .left {
+  position: relative;
+  background-color: #ffffff;
   width: 285px;
-  height: 100%;
+  height: 310px;
   padding: 40px 37px 0 40px;
   float: left;
 }
-body .login-container #legend {
+body .login .login-container .left #legend {
+  padding-bottom: 10px;
   font-size: 18px;
   color: #333;
-  padding: 0px;
 }
-body .login-container .login-item {
+body .login .login-container .left .login-item {
   color: #333;
   position: relative;
 }
-body .login-container .spec {
+body .login .login-container .left .spec {
   background-color: #eef1f0;
   marign-top: 12px;
   padding: 8px 10px;
 }
-body .login-container > label {
-  float: none;
-}
-body .login-container #user-name {
+body .login .login-container .left #user-name {
   margin-right: 0px;
 }
-body .login-container .captcha {
+body .login .login-container .left .captcha {
   width: 130px;
   float: left;
   margin-right: 5px;
 }
-body .login-container .captcha #pass-code-img {
+body .login .login-container .left .captcha #pass-code-img {
   width: 130px;
   height: 35px;
+}
+body .login .login-container .right {
+  height: 350px;
+  vertical-align: top;
+  background-color: #5a5a5a;
+  letter-spacing: 0px;
+  position: relative;
+  color: #aaa;
+  overflow: hidden;
+}
+body .login .login-container .right .closeLogin {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  padding: 0 3px;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 9px;
+  cursor: pointer;
+}
+body .login .login-container .right .third {
+  top: 35px;
+  position: absolute;
+  left: 25px;
+  width: 160px;
+}
+body .login .login-container .right .third #three-way {
+  color: #9DD6C5;
+  letter-spacing: -4px;
+  margin-top: 5px;
+  height: 19px;
+  line-height: 19px;
 }
 /*win 8 Ӣ��ȫ�����л����ݼ���shift+�ո�*/

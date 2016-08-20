@@ -95,8 +95,6 @@ $(function() {
 
     //打开FM和关闭FM
     var leftShow = false;
-    var firstLoad = true;
-    //var firstLoad_share= true;
     var DH = $(document).height();
     $(".side").css("height", DH + "px");
     $(".side-bar").css("height", DH + "px");
@@ -104,24 +102,23 @@ $(function() {
     //左侧播放列表
     $("#side-bar-ctrl").click(function () {
         if (leftShow) {
-            $(".side-bar").animate({left: "-648px"}, 600);
-            $(".side-fm").animate({left: "-674px"}, 600, function () {
-            //$(".side-bar").animate({left: "-674px"}, 600, function () {
+            $(".side-bar").animate({left: "-638px"}, 600, function () {
                 leftShow = false;
-                $("#slideTarget").attr("title", "展开");
-                $("#slideTarget").removeClass("slideClose").addClass("slideOpen");
+                $("#side-bar-ctrl").attr("title", "展开全部兆赫");
+                $("#side-ctrl-center").removeClass("side-close").addClass("side-open");
+                $("#side-ctrl-center").hover(function(){
+                    $(this).removeClass("side-open").addClass("side-open:hover")
+                })
             });
         }
         else {
-            $(".side-bar").animate({left: "0"}, 600);
-            $(".side-fm").animate({left: "0"}, 600, function () {
-                //$(".side-bar").animate({left: "0"}, 600, function () {
-                if (firstLoad) {
-                    firstLoad = false;
-                }
+                $(".side-bar").animate({left: "0"}, 600, function () {
                 leftShow = true;
-                $("#side-bar-ctrl").attr("title", "关闭");
-                $("#side-bar-ctrl").removeClass(".sideOpen").addClass(".sideClose");
+                $("#side-bar-ctrl").attr("title", "关闭全部兆赫");
+                $("#side-ctrl-center").removeClass("side-open").addClass("side-close");
+                    $("#side-ctrl-center").hover(function(){
+                        $(this).removeClass("side-close").addClass("side-close:hover")
+                    })
             });
         };
     });
