@@ -19,24 +19,9 @@ $(document).ready(function () {
         $("#pass-code-img").attr("src", codeUrl);
     }
 
-    //login按钮
-    $("#login-btn").on("click", function () {
-        var userName = $("#user-name").val();
-        var pwd = $("#password").val();
-        if (userName != "邮箱/用户名" && userName != "") {
-            if (pwd != "密码" && pwd != "") {
-                //userId = userName;
-                $(".login-container").remove();
-                $("#over-lay").remove();
-            }
-            else {
-                alert("密码错误！");
-            }
-        }
-        else {
-            alert("用户名错误！");
-        }
-    });
+    //login按钮填充内容后按钮变色
+
+
 
     //登陆信息判定
     //$('#btn-submit').onclick(){
