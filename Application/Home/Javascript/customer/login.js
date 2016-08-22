@@ -20,14 +20,14 @@ $(document).ready(function () {
     }
 
     //login按钮填充内容后按钮变色
-
-
+    $("#btn-submit") .on("click",function () {
+        if ($('.text input').eq(0).val()) {
+            $('#btn-submit').addClass('active');
+        }
+    });
 
     //登陆信息判定
-    //$('#btn-submit').onclick(){
-    //    var incredict ();
-    //    if (userName)
-    //}
+
 
     ////用户名
     //$("#user-name").on("click", function () {

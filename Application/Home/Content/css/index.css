@@ -524,6 +524,10 @@ body .login .login-container .left .submit #btn-submit :hover {
   color: #000000;
   background-color: #D4E1DC;
 }
+body .login .login-container .left .submit #btn-submit .active {
+  color: #000000;
+  background-color: #55BB99;
+}
 body .login .login-container .right {
   height: 350px;
   vertical-align: top;
