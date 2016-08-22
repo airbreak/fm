@@ -1,63 +1,4 @@
 body {
-  margin: 0px;
-  padding: 0px;
-  color: #696969;
-  font: 12px/1.6 arial, helvetica, sans-serif;
-}
-body,
-ul,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-form,
-dl,
-dt,
-dd {
-  margin: 0px;
-  padding: 0px;
-  font-size: 12px;
-  font-weight: normal;
-}
-ul {
-  list-style: none;
-}
-img {
-  border-style: none;
-}
-a {
-  color: #999;
-}
-a:link,
-a:visited {
-  color: #636564;
-  text-decoration: none;
-}
-a:hover {
-  color: black;
-}
-a:active {
-  color: #669;
-}
-a:link {
-  color: #369;
-  text-decoration: none;
-}
-p {
-  line-height: 22px;
-}
-.clear {
-  clear: both;
-}
-label {
-  color: #999;
-  margin-left: 5px;
-}
-body {
   width: 100%;
   height: 100%;
   padding: 0;
@@ -496,7 +437,7 @@ body .login .login-container .left .text {
   color: #333;
   background-color: #eef1f0;
   position: absolute;
-  left: 60px;
+  left: 100px;
   height: 22px;
 }
 body .login .login-container .left .text > input {
@@ -511,6 +452,14 @@ body .login .login-container .left #password {
 body .login .login-container .left .captcha .captcha-left {
   float: left;
   width: 50%;
+}
+body .login .login-container .left .captcha .captcha-left .text-cap {
+  border: 0 none;
+  color: #333;
+  background-color: #eef1f0;
+  position: absolute;
+  left: 70px;
+  height: 22px;
 }
 body .login .login-container .left .captcha .captcha-right {
   float: left;
@@ -532,6 +481,13 @@ body .login .login-container .left .function {
   line-height: 19px;
   width: 100%;
 }
+body .login .login-container .left .function .function-left {
+  float: left;
+}
+body .login .login-container .left .function .function-right {
+  padding-left: 90px;
+  float: left;
+}
 body .login .login-container .left .function .btn-forget-pwd {
   color: #5b9;
 }
@@ -539,7 +495,6 @@ body .login .login-container .left .function .btn-forget-pwd a:link a:visited {
   text-decoration: dotted;
 }
 body .login .login-container .left .function #remember {
-  float: right;
   margin: 2px 2px 0 0;
 }
 body .login .login-container .left .function .sub {
@@ -548,6 +503,7 @@ body .login .login-container .left .function .sub {
   color: #888;
 }
 body .login .login-container .left .submit {
+  padding-top: 20px;
   position: relative;
 }
 body .login .login-container .left .submit #btn-submit {
@@ -642,4 +598,4 @@ body .login .login-container .right #register-mod a {
 body .login .login-container .right #register-mod #register-now label {
   color: #ffffff;
 }
-/*win 8 Ӣ��ȫ�����л����ݼ���shift+�ո�*/
+/*win 8 Ӣ��ȫ����л���ݼ���shift+�ո�*/
