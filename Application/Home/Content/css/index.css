@@ -448,7 +448,7 @@ body .footer .title-info {
   width: 100%;
 }
 body .login {
-  display: none;
+  display: block;
   top: 0;
   left: 0;
   min-width: 1024px;
@@ -473,32 +473,100 @@ body .login .login-container .left {
   height: 310px;
   padding: 40px 37px 0 40px;
   float: left;
+  color: #333;
+}
+body .login .login-container .left .super-bass {
+  color: #333;
 }
 body .login .login-container .left #legend {
   padding-bottom: 10px;
   font-size: 18px;
-  color: #333;
 }
 body .login .login-container .left .login-item {
-  color: #333;
   position: relative;
+  overflow: hidden;
 }
 body .login .login-container .left .spec {
   background-color: #eef1f0;
-  marign-top: 12px;
+  margin-top: 12px;
   padding: 8px 10px;
 }
-body .login .login-container .left #user-name {
-  margin-right: 0px;
+body .login .login-container .left .text {
+  border: 0 none;
+  color: #333;
+  background-color: #eef1f0;
+  position: absolute;
+  left: 60px;
+  height: 22px;
 }
-body .login .login-container .left .captcha {
-  width: 130px;
+body .login .login-container .left .text > input {
+  margin: 0;
+}
+body .login .login-container .left #user-name {
+  width: 183px;
+}
+body .login .login-container .left #password {
+  width: 183px;
+}
+body .login .login-container .left .captcha .captcha-left {
   float: left;
-  margin-right: 5px;
+  width: 50%;
+}
+body .login .login-container .left .captcha .captcha-right {
+  float: left;
+  width: 50%;
+}
+body .login .login-container .left .captcha #pass-code {
+  width: 60px;
 }
 body .login .login-container .left .captcha #pass-code-img {
+  border: 0;
   width: 130px;
   height: 35px;
+  background: url("../img/checkCode.png") no-repeat;
+  cursor: pointer;
+}
+body .login .login-container .left .function {
+  margin-top: 12px;
+  overflow: hidden;
+  line-height: 19px;
+  width: 100%;
+}
+body .login .login-container .left .function .btn-forget-pwd {
+  color: #5b9;
+}
+body .login .login-container .left .function .btn-forget-pwd a:link a:visited {
+  text-decoration: dotted;
+}
+body .login .login-container .left .function #remember {
+  float: right;
+  margin: 2px 2px 0 0;
+}
+body .login .login-container .left .function .sub {
+  float: none;
+  width: auto;
+  color: #888;
+}
+body .login .login-container .left .submit {
+  position: relative;
+}
+body .login .login-container .left .submit #btn-submit {
+  display: block;
+  background-color: #9DD6C5;
+  width: 110px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 0 none;
+  color: #ffffff;
+  font-size: 14px;
+  float: right;
+  cursor: pointer;
+  outline: none;
+}
+body .login .login-container .left .submit #btn-submit :hover {
+  color: #000000;
+  background-color: #D4E1DC;
 }
 body .login .login-container .right {
   height: 350px;
@@ -531,5 +599,47 @@ body .login .login-container .right .third #three-way {
   margin-top: 5px;
   height: 19px;
   line-height: 19px;
+  list-style: none;
+}
+body .login .login-container .right .third #three-way > li {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+  letter-spacing: 0;
+}
+body .login .login-container .right .third #three-way a {
+  color: #55BB99;
+  margin-right: 5px;
+  font-size: 12px;
+}
+body .login .login-container .right .third #three-way a > a:visited {
+  text-decoration: underline;
+}
+body .login .login-container .right #register-mod {
+  bottom: 10px;
+  position: absolute;
+  left: 25px;
+  width: 160px;
+}
+body .login .login-container .right #register-mod > p {
+  line-height: 8px;
+  color: #aaa;
+}
+body .login .login-container .right #register-mod a:hover {
+  background-color: #666;
+}
+body .login .login-container .right #register-mod a {
+  color: #ffffff;
+  border: 1px solid #666666;
+  display: block;
+  width: 130px;
+  height: 30px;
+  padding-left: 10px;
+  line-height: 30px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+body .login .login-container .right #register-mod #register-now label {
+  color: #ffffff;
 }
 /*win 8 Ӣ��ȫ�����л����ݼ���shift+�ո�*/

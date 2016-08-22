@@ -423,7 +423,8 @@ body {
 
   //登陆框
   .login {
-    display: none;
+    //display: none;
+    display: block;
     top: 0;
     left: 0;
     min-width: 1024px;
@@ -451,42 +452,104 @@ body {
           height: 310px;
           padding: 40px 37px 0 40px;
           float: left;
+          color: #333;
+          .super-bass{
+            color: #333;
+          }
           #legend {
             padding-bottom: 10px;
             font-size: 18px;
-            color: #333;
           }
           .login-item {
-            color: #333;
             position: relative;
+            overflow: hidden;
           }
           .spec {
             background-color: #eef1f0;
-            marign-top: 12px;
+            margin-top: 12px;
             padding: 8px 10px;
           }
-          >label {
-
-          }
-          >input {
-
+          .text {
+            border: 0 none;
+            color: #333;
+            background-color: #eef1f0;
+            position: absolute;
+            left: 60px;
+            height: 22px;
+            > input {
+              margin: 0;
+            }
           }
           #user-name {
-            margin-right: 0px;
+            width: 183px;
           }
           #password {
-
-          }
-          #pass-code {
-
+            width: 183px;
           }
           .captcha {
-            width: 130px;
-            float: left;
-            margin-right: 5px;
+            .captcha-left {
+              float: left;
+              width: 50%;
+            }
+            .captcha-right {
+              float: left;
+              width: 50%;
+            }
+            #pass-code {
+              width: 60px;
+            }
             #pass-code-img {
+              border: 0;
               width: 130px;
               height: 35px;
+              background: url("../img/checkCode.png") no-repeat;
+              cursor: pointer;
+            }
+          }
+          .function {
+            margin-top: 12px;
+            overflow: hidden;
+            line-height: 19px;
+            width: 100%;
+            .btn-forget-pwd {
+              color: #5b9;
+              //float: left;
+              a:link a:visited {
+                text-decoration: dotted;
+              }
+            }
+            #remember {
+              //向右浮动
+              float: right;
+              margin: 2px 2px 0 0;
+            }
+            .sub {
+              float: none;
+              width: auto;
+              color: #888;
+            }
+          }
+          .submit {
+            //padding-top: 30px;
+            position: relative;
+            #btn-submit {
+              display: block;
+              background-color: #9DD6C5;
+              width: 110px;
+              height: 35px;
+              line-height: 35px;
+              text-align: center;
+              border: 0 none;
+              color: #ffffff;
+              font-size: 14px;
+              float: right;
+              cursor: pointer;
+              outline: none;
+              //btn hover效果
+              :hover {
+                color: #000000;
+                background-color: #D4E1DC;
+              }
             }
           }
         }
@@ -519,6 +582,51 @@ body {
               margin-top: 5px;
               height: 19px;
               line-height: 19px;
+              list-style: none;
+              > li {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 5px;
+                letter-spacing: 0;
+              }
+              a {
+                color: #55BB99;
+                margin-right: 5px;
+                font-size: 12px;
+                > a:visited {
+                text-decoration: underline;
+                }
+              }
+
+            }
+          }
+          #register-mod {
+            bottom: 10px;
+            position: absolute;
+            left: 25px;
+            width: 160px;
+            > p {
+              line-height: 8px;
+              color: #aaa;
+            }
+            a:hover {
+              background-color: #666;
+            }
+            a {
+              color: #ffffff;
+              border: 1px solid #666666;
+              display: block;
+              width: 130px;
+              height: 30px;
+              padding-left: 10px;
+              line-height: 30px;
+              font-size: 14px;
+              margin-top: 10px;
+            }
+            #register-now {
+                label {
+                  color: #ffffff;
+                }
             }
           }
         }

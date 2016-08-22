@@ -121,7 +121,7 @@
         <!--分享-->
         <div class="listen"></div>
 
-        <!--FM背景-->
+        <!--FM背景-->s
         <div id="fm-bg"></div>
 
         <!--底部-->
@@ -144,31 +144,60 @@
         <!--登陆-->
         <div class="login">
             <div class="login-container">
-            <div class="left">
-                <p id="legend">登陆</p>
-                <div class="login-item spec"><input id="user-name" type="text"></div>
-                <div class="login-item spec"><input id="password" type="text"></div>
-                <div class="login-item spec captcha"><input id="pass-code" type="text"><img id="pass-code-img"/></div>
-                <div class="login-item"><input class="login-check" type="checkbox"><span>下次自动登陆</span></div>
-                <div class="login-item"><a href="#">忘记密码</a></div>
-                <button id="login-btn"><label>登陆</label></button>
-                <p>输入的账号或者密码有误</p>
+                <div class="left">
+                    <p id="legend">登陆</p>
+                    <div class="login-item spec">
+                        <label class="super-bass">邮箱/用户名</label>
+                        <input id="user-name" class="text" type="text">
+                    </div>
+                    <div class="login-item spec">
+                        <label class="super-bass">密码</label>
+                        <input id="password" class="text" type="password">
+                    </div>
+                    <div class="login-item spec captcha">
+                        <!--<label class="super-bass">验证码</label>-->
+                        <!--<input id="pass-code" class="text" type="text">-->
+                        <!--<img id="pass-code-img" title="看不清楚？点击图片可以换一个"/>-->
+                        <!--<div class="clear"></div>-->
+                        <div class="captcha-left">
+                            <label class="super-bass" id="pass-img">验证码</label>
+                            <input id="pass-code" class="text" type="text">
+                        </div>
+                        <div class="captcha-right">
+                            <img id="pass-code-img" title="看不清楚？点击图片可以换一个"/>
+                        </div>
+                    </div>
+                    <div class="login-item function">
+                        <a class="btn-forget-pwd" href="#">忘记密码</a>
+                        <input id="remember" type="checkbox" name="remember">
+                        <label for="remember" class="sub">下次自动登陆</label>
+                    </div>
+                    <div class="login-item submit">
+                        <span class="loading"></span>
+                        <input type="submit" id="btn-submit" value="登陆">
+                        <input type="hidden" name="task">
+                    </div>
+                    <!--<p>输入的账号或者密码有误</p>-->
                 </div>
-            <div class="right">
-                <div class="closeLogin">X</div>
-                <div class="third">
-                    <p>用其他账号登陆</p>
-                    <ul id="three-way">
-                        <li><a href=""><span>新浪微博</span></a></li>
-                        <li><a href=""><span>QQ</span></a></li>
-                        <li><a href=""><span>MSN</span></a></li>
+                <div class="right">
+                    <div class="closeLogin">X</div>
+                    <div class="third">
+                        <p>用其他账号登陆</p>
+                        <ul id="three-way">
+                            <li><a href="">新浪微博</a></li>
+                            <li><a href="">QQ</a></li>
+                            <li><a href="">MSN</a></li>
                         </ul>
                     </div>
-                <p>没有豆瓣FM账户？</p>
-                <div id="register-now"><a href=""><label>立即注册</label></a></div>
+                    <div id="register-mod">
+                        <p>没有豆瓣FM账户？</p>
+                        <div id="register-now"><a href=""><label>立即注册</label></a></div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!--注册-->
 
 </body>
 <script>
