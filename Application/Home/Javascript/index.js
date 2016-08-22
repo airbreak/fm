@@ -57,5 +57,12 @@ $(function() {
 
     });
 
+    //login按钮填充内容后按钮变色
+    $("#btn-submit") .on("focusout",function () {
+        if ($('.text input').eq(0).val()) {
+            $('#btn-submit').addClass('active');
+        }
+    });
+
 
 });

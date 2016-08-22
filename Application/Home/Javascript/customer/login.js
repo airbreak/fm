@@ -19,13 +19,6 @@ $(document).ready(function () {
         $("#pass-code-img").attr("src", codeUrl);
     }
 
-    //login按钮填充内容后按钮变色
-    $("#btn-submit") .on("click",function () {
-        if ($('.text input').eq(0).val()) {
-            $('#btn-submit').addClass('active');
-        }
-    });
-
     //登陆信息判定
 
 
