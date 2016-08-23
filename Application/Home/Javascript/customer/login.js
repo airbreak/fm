@@ -13,14 +13,22 @@ $(document).ready(function () {
         $(".login").hide();
     });
 
+    //弹出注册框
+    $('#register').click(function () {
+        $('.register').show();
+    });
+
+    //关闭注册框
+    $('#register').click(function (){
+        $('.register').hide();
+    });
+
     /*someday I will be remember*/
-    function getCheckCode() {
-        var codeUrl = window.fmUrlObject.img+"/checkCode.png";
-        $("#pass-code-img").attr("src", codeUrl);
-    }
-
-    //登陆信息判定
-
+    /*获取验证码图片*/
+    //function getCheckCode() {
+    //    var codeUrl = window.fmUrlObject.img+"/checkCode.png";
+    //    $("#pass-code-img").attr("src", codeUrl);
+    //}
 
     ////用户名
     //$("#user-name").on("click", function () {

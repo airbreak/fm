@@ -348,15 +348,27 @@ class IndexController extends Controller {
     /*登录*/
     public function login($name='',$pwd='',$code=''){
         if($name=='hisihi' && $pwd=='123456' && $code=='W4r0'){
-            $this->ajaxReturn('登录成功','JSON');
+            $aa=array(
+                data=>'登录成功',
+                status=>'success',
+            );
+            $this->ajaxReturn($aa,'JSON');
             exit();
         }
         else if($code!='W4r0'){
-            $this->ajaxReturn('验证码错误','JSON');
+            $aa=array(
+                data=>'验证码错误',
+                status=>'success',
+            );
+            $this->ajaxReturn($aa,'JSON');
             exit();
         }
         else if($name!='hisihi'|| $pwd!='123456'){
-            $this->ajaxReturn('账号或者密码错误','JSON');
+            $aa=array(
+                data=>'账号或者密码错误',
+                status=>'success',
+            );
+            $this->ajaxReturn($aa,'JSON');
             exit();
         }
     }

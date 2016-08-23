@@ -11,19 +11,19 @@
             <div id="fm-logo"><a href="#"></a></div>
             <div class="user">
                 <ul>
-                    <li><div id="login"><label>登陆</label></div></li>
-                    <li id="register"><a href=""><label>马上注册</label></a></li>
+                    <li><div id="login"><label id="heishehui">登录</label><span id="hisihi"></span></div></li>
+                    <li id="register"><label>马上注册</label></li>
                     <li id="open"><a href=""><label>开启</label><span><img src="__IMG__/pro_icon.gif"/></span></a></li>
                     <div class="clear:both"></div>
                 </ul>
+                    <div class="fm-play">
+                        <div class="fm-left"></div>
+                        <div class="fm-right"></div>
+                    </div>
             </div>
         </div>
 
         <!--播放器-->
-        <div class="fm-play">
-            <div class="fm-left"></div>
-            <div class="fm-right"></div>
-        </div>
 
         <!--侧边全部兆赫-->
         <div class="side-bar">
@@ -121,7 +121,7 @@
         <!--分享-->
         <div class="listen"></div>
 
-        <!--FM背景-->s
+        <!--FM背景-->
         <div id="fm-bg"></div>
 
         <!--底部-->
@@ -145,9 +145,9 @@
         <div class="login">
             <div class="login-container">
                 <div class="left">
-                    <p id="legend">登陆</p>
+                    <p id="legend">登录</p>
                     <div class="login-item spec">
-                        <label class="super-bass">邮箱/用户名</label>
+                        <label class="super-bass">邮箱 / 用户名</label>
                         <input id="user-name" class="text" type="text">
                     </div>
                     <div class="login-item spec">
@@ -160,8 +160,9 @@
                             <input id="pass-code" class="text-cap" type="text">
                         </div>
                         <div class="captcha-right">
-                            <img id="pass-code-img" title="看不清楚？点击图片可以换一个"/>
+                            <img id="pass-code-img" title="看不清楚？点击图片可以换一个" src="__IMG__/CheckCode.png"/>
                         </div>
+                        <div class="clear"></div>
                     </div>
                     <div class="login-item function">
                         <div class="function-left">
@@ -169,19 +170,18 @@
                             <label for="remember" class="sub">下次自动登陆</label>
                         </div>
                         <div class="function-right">
-                            <a class="btn-forget-pwd" href="#">忘记密码</a>
+                            <a class="btn-forget-pwd" href="#">忘记密码?</a>
                         </div>
                     </div>
                     <div class="login-item submit">
-                        <span class="loading"></span>
-                        <input type="submit" id="btn-submit" value="登陆">
+                        <input type="submit" id="btn-submit" value="登录">
                     </div>
                     <!--<p>输入的账号或者密码有误</p>-->
                 </div>
                 <div class="right">
                     <div class="closeLogin">X</div>
                     <div class="third">
-                        <p>用其他账号登陆</p>
+                        <p>用其他账号登录</p>
                         <ul id="three-way">
                             <li><a href="">新浪微博</a></li>
                             <li><a href="">QQ</a></li>
@@ -197,7 +197,59 @@
         </div>
 
         <!--注册-->
-
+        <div class="register">
+            <div class="register-container">
+                <div class="left">
+                    <p id="register-new">新用户注册</p>
+                    <div class="register-item spec username">
+                        <label class="super-bass">用户名</label>
+                        <input class="text user-name" type="text" placeholder="由英文和数字组成">
+                    </div>
+                    <div class="register-item spec password">
+                        <label class="super-bass">密码</label>
+                        <input class="text password" type="password" placeholder="包含英文和数字，最少8位">
+                    </div>
+                    <div class="register-item spec password">
+                        <label class="super-bass">重复密码</label>
+                        <input class="text password" type="password">
+                    </div>
+                    <div class="register-item spec captcha">
+                        <div class="captcha-left">
+                            <label class="super-bass" id="reg-img">验证码</label>
+                            <input id="reg-code" class="text-cap" type="text">
+                        </div>
+                        <div class="captcha-right">
+                            <img id="reg-code-img" title="看不清楚？点击图片可以换一个" src="__IMG__/CheckCode.png"/>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="register-function">
+                        <div class="function-left">
+                            <input class="remember" type="checkbox" name="remember">
+                            <label for="read" >阅读并同意《<span>使用协议</span>》</label>
+                        </div>
+                        <div class="function-right">
+                            <input type="submit" class="btn-submit" id="reg-function" value="完成注册">
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="closeLogin">X</div>
+                    <div class="third">
+                        <p>用其他账号登录</p>
+                        <ul class="three-way">
+                            <li><a href="">新浪微博</a></li>
+                            <li><a href="">QQ</a></li>
+                            <li><a href="">MSN</a></li>
+                        </ul>
+                    </div>
+                    <div class="register-mod">
+                        <p>没有豆瓣FM账户？</p>
+                        <div class="register-now"><a href=""><label>立即注册</label></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 <script>
     window.fmUrlObject={

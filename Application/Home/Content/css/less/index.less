@@ -4,7 +4,10 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  //ͷ��
+.clear {
+  clear: both;
+}
+  //顶部
   .head {
     height: 170px;
     width: 900px;
@@ -34,6 +37,9 @@ body {
           float: left;
           border-right: 1px solid #cccccc;
           padding-right: 5px;
+          #hisihi {
+            display: none;
+          }
         }
         #open {
           border: none;
@@ -42,7 +48,7 @@ body {
     }
   }
 
-  //���ȫ���׺�
+  //侧边页
   .side-bar {
     //���ص�½��
     //display: none;
@@ -333,7 +339,7 @@ body {
     }
   }
 
-  //�в�����
+  //FM 背景
   #fm-bg {
     min-height: 280px;
     width: 100%;
@@ -343,7 +349,7 @@ body {
     position: absolute;
   }
 
-  //�в�����li
+  //FM 列表
   .list-container {
     width: 900px;
     margin: 0 auto;
@@ -402,7 +408,7 @@ body {
     }
   }
 
-  //�ײ�
+  //底部
   .footer {
     //position: relative;
     top: 480px;
@@ -421,24 +427,21 @@ body {
     }
   }
 
-  //��½��
+  //登陆框
   .login {
-    //display: none;
-    display: block;
+    //display: block;
+    display: none;
     top: 0;
     left: 0;
     min-width: 1024px;
     height: 100%;
     position: absolute;
-    //z-index: 21;
     width: 100%;
     height: 100%;
-    //Ԫ�ز㼶
     background-color: #eaedec;
     opacity: 0.9;
     position: absolute;
     .login-container {
-        //z-index: 22;
         left: 38%;
         top: 35%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -455,9 +458,9 @@ body {
           color: #333;
           .super-bass{
             color: #333;
+            margin: 0px;
           }
           #legend {
-            padding-bottom: 10px;
             font-size: 18px;
           }
           .login-item {
@@ -476,6 +479,7 @@ body {
             position: absolute;
             left: 100px;
             height: 22px;
+            outline: none;
             > input {
               margin: 0;
             }
@@ -487,10 +491,12 @@ body {
             width: 183px;
           }
           .captcha {
+            padding: 0px;
             .captcha-left {
               float: left;
               width: 50%;
               .text-cap {
+                outline: none;
                 border: 0 none;
                 color: #333;
                 background-color: #eef1f0;
@@ -500,50 +506,55 @@ body {
               }
             }
             .captcha-right {
+              text-align: right;
+              height: 35px;
               float: left;
               width: 50%;
             }
+            #pass-img {
+              line-height: 35px;
+              padding-left: 8px;
+            }
             #pass-code {
               width: 60px;
+              margin-top: 7px;
             }
             #pass-code-img {
               border: 0;
-              width: 130px;
-              height: 35px;
-              background: url("../img/checkCode.png") no-repeat;
               cursor: pointer;
             }
           }
           .function {
-            margin-top: 12px;
+            margin-top: 20px;
             overflow: hidden;
             line-height: 19px;
             width: 100%;
             .function-left {
               float: left;
+              .sub {
+              float: none;
+              width: auto;
+              color: #888;
+                vertical-align: 3px;
+              }
+              #remember {
+                padding: 0;
+                margin: 0;
+              }
             }
             .function-right {
-              padding-left: 90px;
+              padding-left: 135px;
               float: left;
             }
             .btn-forget-pwd {
               color: #5b9;
-              //float: left;
-              a:link a:visited {
-                text-decoration: dotted;
+              &:hover {
+                text-decoration: underline;
               }
-            }
-            #remember {
-              margin: 2px 2px 0 0;
-            }
-            .sub {
-              float: none;
-              width: auto;
-              color: #888;
             }
           }
           .submit {
-            padding-top: 20px;
+            padding-top: 40px;
             position: relative;
             #btn-submit {
               display: block;
@@ -558,11 +569,11 @@ body {
               float: right;
               cursor: pointer;
               outline: none;
-              :hover {
-                color: #000000;
-                background-color: #D4E1DC;
+              &:hover {
+                color: #899D97;
+                background-color: #BAE2D6;
               }
-              .active {
+              &.active {
                 color: #000000;
                 background-color: #55BB99;
               }
@@ -593,7 +604,6 @@ body {
             left: 25px;
             width: 160px;
             #three-way {
-              color: #9DD6C5;
               letter-spacing: -4px;
               margin-top: 5px;
               height: 19px;
@@ -606,18 +616,17 @@ body {
                 letter-spacing: 0;
               }
               a {
-                color: #55BB99;
+                color: #90BEB0;
                 margin-right: 5px;
                 font-size: 12px;
-                > a:visited {
+              &:hover {
                 text-decoration: underline;
                 }
               }
-
             }
           }
           #register-mod {
-            bottom: 10px;
+            bottom: 30px;
             position: absolute;
             left: 25px;
             width: 160px;
@@ -648,5 +657,182 @@ body {
         }
       }
     }
+
+  .register {
+    //默认展示登陆框
+    //display: block;
+    display: none;
+    top: 0;
+    left: 0;
+    min-width: 1024px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #eaedec;
+    opacity: 0.9;
+    position: absolute;
+    .register-container {
+      background-color: #ffffff;
+      left: 35%;
+      top: 35%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      //删除边框宽度
+      //width: 551px;
+      height: 400px;
+      position: absolute;
+      .left {
+        width: 285px;
+        padding: 40px 35px 0 37px;
+        letter-spacing: 0px;
+        float: left;
+        #register-new {
+          font-size: 18px;
+          color: #333;
+          padding: 0;
+        }
+        .register-item {
+          color: #666;
+        }
+        .spec {
+          background-color: #eef1f0;
+          margin-top: 12px;
+          padding: 8px 10px;
+          position: relative;
+          height: 30px;
+        }
+        .super-bass {
+          color: #666;
+          float: none;
+          margin-right: 25px;
+          cursor: default;
+          line-height: 30px;
+        }
+        .text {
+          border: 0 none;
+          color: #333;
+          left: 100px;
+          height: 22px;
+          outline: none;
+          background-color: #eef1f0;
+          width: 170px;
+          position: absolute;
+          left: 68px;
+          top: 10px;
+        }
+        .captcha {
+          padding: 0px;
+          .captcha-left {
+            float: left;
+            width: 50%;
+            .text-cap {
+              outline: none;
+              border: 0 none;
+              color: #333;
+              background-color: #eef1f0;
+              position: absolute;
+              left: 70px;
+              height: 22px;
+            }
+          }
+          .captcha-right {
+            text-align: right;
+            height: 35px;
+            float: left;
+            width: 50%;
+          }
+          #reg-img {
+            line-height: 35px;
+            padding-left: 8px;
+          }
+          #reg-code {
+            width: 60px;
+            margin-top: 7px;
+          }
+          #reg-code-img {
+            border: 0;
+            cursor: pointer;
+          }
+        }
+
+      }
+      .right {
+        height: 100%;
+        vertical-align: top;
+        background-color: #5a5a5a;
+        letter-spacing: 0px;
+        position: relative;
+        color: #aaa;
+        overflow: hidden;
+        .closeLogin {
+          position: absolute;
+          top: 10px;
+          right: 12px;
+          padding: 0 3px;
+          z-index: 1;
+          color: #ffffff;
+          font-size: 9px;
+          cursor: pointer;
+        }
+        .third {
+          top: 35px;
+          position: absolute;
+          left: 25px;
+          width: 160px;
+          .three-way {
+            letter-spacing: -4px;
+            margin-top: 5px;
+            height: 19px;
+            line-height: 19px;
+            list-style: none;
+            > li {
+              display: inline-block;
+              vertical-align: top;
+              margin-right: 5px;
+              letter-spacing: 0;
+            }
+            a {
+              color: #90BEB0;
+              margin-right: 5px;
+              font-size: 12px;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        .register-mod {
+          bottom: 30px;
+          position: absolute;
+          left: 25px;
+          width: 160px;
+          > p {
+            line-height: 8px;
+            color: #aaa;
+          }
+          a:hover {
+            background-color: #666;
+          }
+          a {
+            color: #ffffff;
+            border: 1px solid #666666;
+            display: block;
+            width: 130px;
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+            font-size: 14px;
+            margin-top: 10px;
+          }
+          .register-now {
+            label {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
-/*win 8 Ӣ��ȫ����л���ݼ���shift+�ո�*/
+/*win8 切换全半角输入法shift+空格键*/
