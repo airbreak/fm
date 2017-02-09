@@ -78,5 +78,4 @@ $(function() {
         }
     });
 
-/*you say it best when you say nothing at all*/
 });
