@@ -25,21 +25,51 @@
 
         <!--播放器-->
         <div class="fmPlayer">
-            <div class="fmPlayerLeft">
                 <div class="left">
                     <img class="albumImg" src="https://img3.doubanio.com/lpic/s28353853.jpg"/>
                 </div>
                 <div class="right">
-                    <p class="singer">Missing</p>
-                    <p class="album"></p>
+                    <!--歌曲暂停-->
+                    <div id="stop-btn"></div>
+                    <p class="singer">庄心妍</p>
+                    <p class="album"> 庄心妍的专辑 </p>
+                    <p class="song-name">以后的以后</p>
                     <!--歌曲进度条-->
-                    <div class="progressBar">
-                        <div class="time"></div>
-                        <div class="bar"></div>
+                    <div class="progress-bar"></div>
+                    <div class="song-time"><span class="song-time-num">-0:18</span><span class="song-time-img"></span></div>
+                    <div class="song-area">
+                        <div class="select-action heart"></div>
+                        <div class="select-action delete"></div>
+                        <div class="select-action next"></div>
                     </div>
                 </div>
+        </div>
+
+        <!--分享链接-->
+        <div class="share-link">
+            <span class="share-link-tips">分享到：</span>
+            <div class="share-link-section">
+                <span class="share-link-img" id="share-link-img-db">
+                    <img src="./../../Application/home/Content/img/shareIcons/shareTodouban.png" />
+                </span>
+                <span class="share-link-img">
+                    <img src="./../../Application/home/Content/img/shareIcons/shareToqq.png" />
+                </span>
+                <span class="share-link-img">
+                    <img src="./../../Application/home/Content/img/shareIcons/shareTorenren.png" />
+                </span>
+                <span class="share-link-img">
+                    <img src="./../../Application/home/Content/img/shareIcons/shareTosouhu.png" />
+                </span>
+                <span class="share-link-img">
+                    <img src="./../../Application/home/Content/img/shareIcons/shareTotengxun.png" />
+                </span>
+                <span class="share-link-img">
+                    <img src="./../../Application/home/Content/img/shareIcons/shareToxinlan.png" />
+                </span>
             </div>
         </div>
+
 
         <!--侧边全部兆赫-->
         <div class="side-bar">

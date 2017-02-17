@@ -66,6 +66,9 @@ body {
 body .clear {
   clear: both;
 }
+body .hide {
+  display: none;
+}
 body .head {
   height: 170px;
   width: 900px;
@@ -854,24 +857,110 @@ body .fmPlayer {
   position: absolute;
   width: 560px;
   height: 280px;
-  top: 253px;
+  top: 130px;
   right: 70px;
-  background-color: #ff3;
+  background-color: #fff;
 }
-body .fmPlayer .fmPlayerLeft {
-  width: 300px;
-  height: 300px;
+body .fmPlayer .left {
   float: left;
   position: relative;
-}
-body .fmPlayer .fmPlayerLeft .left {
   width: 280px;
   height: 280px;
 }
-body .fmPlayer .fmPlayerLeft .left > img {
+body .fmPlayer .left > img {
   width: 100%;
 }
-body .fmPlayer .fmPlayerLeft .right > p {
-  text-align: center;
+body .fmPlayer .right {
+  position: absolute;
+  width: 250px;
+  height: 265px;
+  left: 280px;
+  right: 70px;
+  padding: 0px 15px 15px 15px;
+}
+body .fmPlayer .right #stop-btn {
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  background: url("../../Content/img/players/stopMusic.png") no-repeat;
+}
+body .fmPlayer .right > p {
+  text-align: left;
+}
+body .fmPlayer .right .singer {
+  color: #A9A9A9;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+body .fmPlayer .right .album {
+  color: #333333;
+  margin-bottom: 15px;
+}
+body .fmPlayer .right .song-name {
+  color: #9DD6C5;
+  font-size: 16px;
+}
+body .fmPlayer .right .progress-bar {
+  width: 232px;
+  height: 11px;
+  display: inline-block;
+  background: url("../../Content/img/players/progressBar.png") no-repeat;
+}
+body .fmPlayer .right .song-time {
+  text-align: right;
+  width: 232px;
+}
+body .fmPlayer .right .song-time .song-time-num {
+  display: inline-block;
+  color: #A9A9A9;
+  font-size: 10px;
+  margin-right: 5px;
+  vertical-align: 2px;
+}
+body .fmPlayer .right .song-time .song-time-img {
+  display: inline-block;
+  width: 6px;
+  height: 10px;
+  background: url("../../Content/img/players/horn.png");
+}
+body .fmPlayer .right .song-area {
+  width: 232px;
+  height: 30px;
+  text-align: right;
+}
+body .fmPlayer .right .song-area .select-action {
+  display: inline-block;
+  width: 28px;
+  height: 29px;
+}
+body .fmPlayer .right .song-area .select-action.heart {
+  background: url("../../Content/img/players/heart.png") no-repeat;
+  margin-right: 15px;
+}
+body .fmPlayer .right .song-area .select-action.delete {
+  background: url("../../Content/img/players/rubbishBins.png") no-repeat;
+  margin-right: 15px;
+}
+body .fmPlayer .right .song-area .select-action.next {
+  background: url("../../Content/img/players/nextSong.png") no-repeat;
+}
+body .share-link {
+  position: absolute;
+  top: 424px;
+  right: 425px;
+}
+body .share-link .share-link-section {
+  display: inline-block;
+  vertical-align: -6px;
+}
+body .share-link .share-link-section .share-link-img {
+  margin-left: 5px;
+}
+body .share-link .share-link-section .share-link-img:hover {
+  display: block;
 }
 /*win8 切换全半角输入法shift+空格键*/

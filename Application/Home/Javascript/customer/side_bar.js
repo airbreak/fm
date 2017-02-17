@@ -35,10 +35,10 @@ $(function() {
     });
 
     //banner自动切换
-    //function autoPlay() {
+    // function autoPlay() {
     //    var n=n>=(bannerArr[index].length-1):?0,n+1;
     //    $(".banner-left img").eq(n).trigger('mouseenter');
-    //}
+    // }
 
     //获得音乐类别
     $.get(window.fmUrlObject.baseUrlApi + 'getMusicTypeInfo', null, function (result) {

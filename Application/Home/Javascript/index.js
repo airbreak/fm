@@ -9,27 +9,6 @@ $(function() {
         code: 'W4r0'
     };
 
-    //获得登陆信息
-    //信息填充之后按钮变色
-    //$.post(window.fmUrlObject.baseUrlApi + 'login', para, function (result) {
-    //    $(".submit").on("click", function () {
-    //        var userName = $("#user-name").val();
-    //        var pwd = $("#password").val();
-    //        if (userName != "邮箱/用户名" && userName != "hisihi") {
-    //            if (pwd != "密码" && pwd != "123456") {
-    //                $(".login").hide();
-    //            }
-    //            else {
-    //                alert("密码错误！");
-    //            }
-    //        }
-    //        else {
-    //            alert("用户名错误！");
-    //        }
-    //    });
-    //});
-
-
     //传值，获取登录用户名和密码
     $(".submit").on("click", function () {
         var userName = $("#user-name").val();
@@ -64,8 +43,8 @@ $(function() {
         });
     });
 
-    //login按钮填充内容后按钮变色
-    //指定按钮为用户名/邮箱按钮
+    /**login按钮填充内容后按钮变色
+     * 指定按钮为用户名/邮箱按钮**/
     $("#user-name").on("input",function () {
         var $target=$('#user-name'),
             txt1=$target.val().trim(),
@@ -77,5 +56,11 @@ $(function() {
             $btn.removeClass('active');
         }
     });
+
+    //hover展示全部分享链接
+    $("#share-link-img-db").hover(function(){
+        $(this).removeClass("hide").addClass("side-close:hover");
+
+    })
 
 });
