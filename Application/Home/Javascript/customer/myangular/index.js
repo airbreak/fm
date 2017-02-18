@@ -28,7 +28,8 @@ myMoudle.controller('bannerController',['$scope','$http',function($scope,$http){
         url:window.fmUrlObject.baseUrlApi+'getBannerInfo'
     }).success(function(result,status,headers,config){
         if(result.status=='success') {
-            var len = result.data.length,navArr=[];
+            var len = result.data.length,
+                navArr=[];
             for(var i=0;i<len;i++){
                 navArr.push(i+1);
             }
